@@ -36,7 +36,7 @@ export default {
   },
   bottomContainer:{
     position: 'absolute',
-    top: '50%',
+    top: '40%',
     left: 0,
     marginTop:40,
     width: '100%',

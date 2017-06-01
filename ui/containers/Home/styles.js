@@ -30,7 +30,7 @@ export default {
     borderColor: '#979797'
   }, 
   iconLarge:{
-    fontSize: 50,    
+    fontSize: 45,    
   },
   optionContainer:{
     borderWidth: 0.5,
