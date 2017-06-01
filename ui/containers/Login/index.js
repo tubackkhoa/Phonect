@@ -118,7 +118,7 @@ export default class extends Component {
               label="Mật khẩu" secureTextEntry={true} component={InputField} />              
             <Button onPress={handleSubmit(this._handleLogin)} 
               style={styles.button}>
-              <Text>Đăng nhập</Text>
+              <Text>Sign in</Text>
             </Button>
                      
           </Form>
