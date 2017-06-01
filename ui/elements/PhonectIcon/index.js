@@ -32,7 +32,7 @@ export const glyphMap = {
   "up-arrow": 59672
 };
 
-const iconSet = createIconSet(glyphMap, 'phonect', 'phonect.ttf');
+const iconSet = createIconSet(glyphMap, 'icomoon', 'phonect.ttf');
 
 export default iconSet;
 
