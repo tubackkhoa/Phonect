@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "ba": "cd android && ./gradlew assembleRelease",
+    "ra": "react-native run-android",
+    "ios": "react-native run-ios",
+    "bio": "cd ios && fastlane beta"
   },
   "rnpm": {
     "assets": [
@@ -48,6 +52,7 @@
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-remove-console": "^6.8.1",
     "babel-preset-react-native": "1.9.1",
+    "eslint-plugin-react-native": "^2.3.2",
     "jest": "19.0.2",
     "react-test-renderer": "~15.4.1"
   },
