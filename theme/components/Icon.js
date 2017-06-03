@@ -17,6 +17,9 @@ export default (variables = variable) => {
     '.red': {
       color: variables.redColor,
     },
+    '.green': {
+      color: variables.greenColor,
+    },
     '.active': {
       color: variables.tabBarActiveTextColor,
     },

@@ -1,5 +1,5 @@
 export default {
-  notifications:[  
+  list:[  
     {
       id: 1,
       icon: 'refresh',

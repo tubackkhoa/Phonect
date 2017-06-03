@@ -11,7 +11,7 @@ import Login from './containers/Login'
 // import UserProfile from './containers/User/Profile'
 import UserSetting from './containers/User/Setting'
 import People from './containers/People/Index'
-// import DelegationDetail from './containers/Delegation/Detail'
+import Call from './containers/Call'
 // import ActivityLog from './containers/ActivityLog'
 // import Network from './containers/Network'
 // import ChangePassword from './containers/User/Action/ChangePassword'
@@ -36,10 +36,10 @@ export default {
         headerType: 'none',
         footerType: 'none',
     },
-    // test: {
-    //     title: 'Test',
-    //     Page: Test,
-    // },
+    call: {
+        title: 'Call',
+        Page: Call,
+    },
     home: {        
         title: 'My Status',
         Page: Home,                

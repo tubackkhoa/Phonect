@@ -64,7 +64,7 @@ export default class extends Component {
           <Left>
               <Thumbnail style={styles.thumb} source={avatarImage}/>
           </Left>
-          <Body style={{marginLeft:10}}>
+          <Body>
               <Text large>Willie Stewart</Text>                        
               <Text>Sale</Text>
           </Body>

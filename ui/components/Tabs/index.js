@@ -1,10 +1,20 @@
 import React, { Component } from 'react'
 import {                 
-    Tabs,
-    DefaultTabBar,
+    Tabs, ScrollableTab, TabHeading, Text,
 } from 'native-base'
+import styles from './styles'
 
 
-export default props => (                         
-  <Tabs renderTabBar={props => <DefaultTabBar regit />} {...props} />      
-)
+export default class extends Component {
+  render() {
+    const {style, ...props} = this.props
+    return (                         
+      <Tabs {...props} renderTabBar={props => <ScrollableTab 
+        underlineStyle={{
+          height: 5,          
+          borderRadius:2.5,
+        }}
+        style={{...styles.tab, ...style}} tabsContainerStyle={styles.tabContainer} />}/>      
+    )
+  }
+}

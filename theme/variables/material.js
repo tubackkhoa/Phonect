@@ -16,7 +16,9 @@ export default {
 
     // Badge
   badgeBg: '#ED1727',
-  badgeColor: '#fff',
+  get badgeColor(){
+    return this.whiteColor
+  },
     // New Variable
   badgePadding: (platform === 'ios') ? 3 : 0,
 
@@ -45,10 +47,16 @@ export default {
 
   // Segment
   segmentBackgroundColor: '#3F51B5',
-  segmentActiveBackgroundColor: '#fff',
-  segmentTextColor: '#fff',
+  get segmentActiveBackgroundColor(){
+    return this.whiteColor
+  },
+  get segmentTextColor(){
+    return this.whiteColor
+  },
   segmentActiveTextColor: '#3F51B5',
-  segmentBorderColor: '#fff',
+  get segmentBorderColor(){
+    return this.whiteColor
+  },
   segmentBorderColorMain: '#3F51B5',
 
     // New Variable
@@ -112,7 +120,9 @@ export default {
 
 
     // Card
-  cardDefaultBg: '#fff',
+  get cardDefaultBg(){
+    return this.whiteColor
+  },
 
 
       // Color
@@ -141,13 +151,19 @@ export default {
 
     // Footer
   footerHeight: 55,
-  footerDefaultBg: '#FFF',
+  get footerDefaultBg(){
+    return this.whiteColor
+  },
 
 
     // FooterTab
-  tabBarTextColor: '#4A4A4A',
-  tabBarTextSize: (platform === 'ios') ? 14 : 11,
-  activeTab: '#fff',
+  get tabBarTextColor(){
+    return this.blackColor
+  },
+  tabBarTextSize: (platform === 'ios') ? 14 : 13,
+  get activeTab(){
+    return this.whiteColor
+  },
   sTabBarActiveTextColor: '#007aff',
   get tabBarActiveTextColor(){
     return this.blueColor
@@ -156,18 +172,28 @@ export default {
   tabActiveBgColor: undefined,
 
     // Tab
-  topTabBarTextSize: 11,
+  topTabBarTextSize: 16,
   tabDefaultBg: '#3F51B5',
-  topTabBarTextColor: '#959595',
-  topTabBarActiveTextColor: '#959595',
-  topTabDefaultBg: '#d7d7d7',
+  get topTabBarTextColor(){
+    return this.whiteColor
+  },
+  get topTabBarActiveTextColor(){
+    return this.yellowColor
+  },
+  get topTabDefaultBg(){
+    return this.blueColor
+  },
   topTabActiveBgColor: undefined,
   topTabBarBorderColor: 'transparent',
-  topTabBarActiveBorderColor: '#117e9e',
+  get topTabBarActiveBorderColor(){
+    return this.yellowColor
+  },
 
 
     // Header
-  toolbarBtnColor: '#fff',
+  get toolbarBtnColor(){
+    return this.whiteColor
+  },
   get toolbarDefaultBg(){
     return this.blueColor
   },
@@ -175,10 +201,14 @@ export default {
   toolbarHeight: (platform === 'ios') ? 70 : 50,
   toolbarIconSize: (platform === 'ios') ? 20 : 22,
   toolbarSearchIconSize: (platform === 'ios') ? 20 : 23,
-  toolbarInputColor: '#fff',
+  get toolbarInputColor(){
+    return this.whiteColor
+  },
   searchBarHeight: (platform === 'ios') ? 30 : 40,
   toolbarInverseBg: '#222',
-  toolbarTextColor: '#fff',
+  get toolbarTextColor(){
+    return this.whiteColor
+  },
   toolbarDefaultBorder: '#3F51B5',
   iosStatusbar: 'light-content',
   get statusBarColor() {
@@ -229,7 +259,7 @@ export default {
   listDividerBg: '#f4f4f4',
   listItemHeight: 45,
   listItemActiveColor: '#c7eafb',
-    listBtnUnderlayColor: 'transparent',
+  listBtnUnderlayColor: 'transparent',
 
     // Card
   cardBorderColor: '#ccc',
@@ -276,7 +306,9 @@ export default {
     return this.blackColor
   },
   textMuteColor: '#9B9B9B',
-  inverseTextColor: '#fff',
+  get inverseTextColor(){
+    return this.whiteColor
+  },
   noteFontSize: 14,
   noteTextColor: '#a7a7a7',
   linkTextColor: '#448ccb',
@@ -285,10 +317,14 @@ export default {
   titleFontfamily: (platform === 'ios') ? 'Roboto' : 'Roboto_medium',
   titleFontSize: 19,
   subTitleFontSize: 14,
-  subtitleColor: '#FFF',
+  get subtitleColor(){
+    return this.whiteColor
+  },
 
     // New Variable
-  titleFontColor: '#FFF',
+  get titleFontColor(){
+    return this.whiteColor
+  },
 
 
     // Other
@@ -312,6 +348,7 @@ export default {
   inputGroupRoundedBorderRadius: 30,
 
   // color theme
+  whiteColor: '#FFFFFF',
   grayColor: '#959595',  
   redColor: '#F55123',
   greenColor: '#2FA15C',

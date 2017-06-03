@@ -8,8 +8,7 @@ export default (variables = variable) => {
   const platform = variables.platform;
 
   const tabHeadingTheme = {
-    flexDirection: 'row',
-    backgroundColor: variables.topTabDefaultBg,
+    flexDirection: 'row',    
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

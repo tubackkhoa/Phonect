@@ -6,31 +6,31 @@ export default {
     backgroundColor:'transparent'
   },
   content:{
-    marginTop:10,
+    // marginTop:10,
     backgroundColor:'red',    
     backgroundColor:'#FFF',  
-      
+    padding: 10,
   },
   rightContainer:{
-    borderBottomWidth:0,
-    flexDirection:'row',
-    width:100,                              
-    paddingRight:5,
-    alignItems:'center',
-    justifyContent:'space-between'
+    borderBottomWidth:0,   
+    paddingRight: 0,    
   },
   listItemContainer:{
     borderBottomWidth:0.5,
-    borderColor: material.grayColor,
+    borderColor: '#D8D8D8',
     marginLeft:0,
-    marginRight:0,
-    height: 65,
+    marginRight:0,    
+    height: 75,        
   },
   thumb:{
-    borderRadius: 3,
-    width: 35,
-    height: 35,
-    marginLeft: 10,
+    borderRadius: 27,    
+    width: 54,
+    height: 54,    
+    borderWidth: 1,
+    borderColor: '#979797',
+  },
+  textLarge:{
+    fontSize: 20,
   },
   button: {
     height: 18,
