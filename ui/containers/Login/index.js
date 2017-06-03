@@ -71,17 +71,17 @@ export default class extends Component {
   }
 
   _handleLogin = async ({email, password}) => {   
-    this.props.forwardTo('home') 
-    // this.setState({ loading: true })
-    // try{
-    //   const user = await this.props.firebase.auth().signInWithEmailAndPassword(email, password)
-    //   console.log(user.uid) 
-    //   this.setState({ loading: false })
-    //       this.props.forwardTo('home')
-    // } catch(err){
-    //   console.error('error authing with firebase:', err)
-    //   this.setState({ loading: false })
-    // }
+    // this.props.forwardTo('home') 
+    this.setState({ loading: true })
+    try{
+      const user = await this.props.firebase.auth().signInWithEmailAndPassword(email, password)
+      console.log(user.uid) 
+      this.setState({ loading: false })
+          this.props.forwardTo('home')
+    } catch(err){
+      console.error('error authing with firebase:', err)
+      this.setState({ loading: false })
+    }
   }
 
   render() {    

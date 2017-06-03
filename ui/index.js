@@ -23,8 +23,10 @@ export default class extends Component {
   componentDidMount(){
     configureStore(store=> {
       // reload app 
-      const firstRoute = store.getState().firebase.auth ? 'home' : 'login'
-      store.dispatch(forwardTo(firstRoute, true))      
+      if(!__DEV__){
+        const firstRoute = store.getState().firebase.auth ? 'home' : 'login'
+        store.dispatch(forwardTo(firstRoute, true))      
+      }
       this.store = store
       this.forceUpdate()
     })

@@ -1,16 +1,12 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
-import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase'
 import createSagaMiddleware from 'redux-saga'
-import { AsyncStorage } from 'react-native'
+import {AsyncStorage} from 'react-native'
 import { persistStore, autoRehydrate } from 'redux-persist'
-
-import rootReducer from './reducers'
-import rootSaga from './sagas'
+import { reactReduxFirebase, getFirebase } from 'react-redux-firebase'
 
 import { FIREBASE_CONFIG } from '~/store/constants/api'
-
-// Add redux Firebase to compose
-
+import rootReducer from './reducers'
+import rootSaga from './sagas'
 
 const initialState = {}
 
@@ -29,25 +25,25 @@ if (__DEV__) {
   GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
 }
 
-// const enhancer = [autoRehydrate(), applyMiddleware(...middleware)]
-const enhancer = [applyMiddleware(...middleware)]
-window.devToolsExtension && enhancer.push(window.devToolsExtension())
-
-const createStoreWithFirebase = compose(
+// build enhancer with firebase as a reducer and store from storage via middle ware
+const enhancer = [
   reactReduxFirebase(FIREBASE_CONFIG, { 
     userProfile: 'users',
     enableLogging: false,
     ReactNative: { AsyncStorage }, 
-  }),
-  ...enhancer,
-)(createStore)
+  }), 
+  autoRehydrate(), 
+  applyMiddleware(...middleware)
+]
+
+window.devToolsExtension && enhancer.push(window.devToolsExtension())
 
 // mount it on the Store
-const store = createStoreWithFirebase(
+const store = createStore(
   rootReducer,
   initialState,
   // if you use getStoredState then no need to use auto hydrate to get state back
-  // compose(...enhancer),
+  compose(...enhancer),
 )
 
 // then run the saga

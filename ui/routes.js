@@ -10,7 +10,7 @@ import Login from './containers/Login'
 // import SignUpStep6 from './containers/SignUp/Step6'
 // import UserProfile from './containers/User/Profile'
 import UserSetting from './containers/User/Setting'
-// import Delegation from './containers/Delegation/Index'
+import People from './containers/People/Index'
 // import DelegationDetail from './containers/Delegation/Detail'
 // import ActivityLog from './containers/ActivityLog'
 // import Network from './containers/Network'
@@ -48,10 +48,11 @@ export default {
     //     title: 'Notification',
     //     Page: Notification,
     // },   
-    // delegation: {
-    //     title: 'Delegation',
-    //     Page: Delegation,
-    // },
+    people: {
+        title: 'People',
+        Page: People,
+        headerType: 'search',
+    },
     // 'delegation/detail/:id': {
     //     title: 'Delegation Detail',
     //     Page: DelegationDetail,
@@ -63,7 +64,7 @@ export default {
     //     Page: UserProfile,
     //     headerType: 'none',
     // },  
-    'setting': {
+    setting: {
         title: 'Setting',
         Page: UserSetting,
     },       
