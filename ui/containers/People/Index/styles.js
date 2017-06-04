@@ -17,7 +17,7 @@ export default {
   },
   listItemContainer:{
     borderBottomWidth:0.5,
-    borderColor: '#D8D8D8',
+    borderColor: material.listBorderGrayColor,
     marginLeft:0,
     marginRight:0,    
     height: 75,        

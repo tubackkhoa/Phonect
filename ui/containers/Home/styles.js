@@ -19,7 +19,7 @@ export default {
     borderWidth: 0.5,
     borderRadius: 10,
     marginTop: 10,
-    borderColor: '#E2F0FF',
+    borderColor: material.listBorderColor,
   },
   thumb:{
     borderRadius: 27,
@@ -34,7 +34,7 @@ export default {
   },
   optionContainer:{
     borderWidth: 0.5,
-    borderColor: '#E2F0FF',    
+    borderColor: material.listBorderColor,    
   },
   optionContainerActive:{
     borderWidth: 1,

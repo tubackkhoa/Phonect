@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import material from '~/theme/variables/material'
 
 // const hairlineWidth = StyleSheet.hairlineWidth
 
@@ -6,7 +7,7 @@ export default {
     wrapper: {
         flexDirection: 'row',        
         borderBottomWidth: 2,
-        borderColor: '#E2F0FF',
+        borderColor: material.listBorderColor,
     },
     main: {
         flex: 1,
@@ -31,7 +32,7 @@ export const keyStyle = {
         justifyContent: 'center',
         borderRightWidth: 2,
         borderTopWidth: 2,
-        borderColor: '#E2F0FF'
+        borderColor: material.listBorderColor,
     },
     get border() {
       return {

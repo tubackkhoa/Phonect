@@ -6,7 +6,7 @@ export default {
     marginBottom: 20,
     marginHorizontal: 15,
     padding: 10,
-    borderColor: '#E2F0FF',
+    borderColor: material.listBorderColor,
     borderWidth: 1,
   },
   textLarge: {

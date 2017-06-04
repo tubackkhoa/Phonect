@@ -19,14 +19,17 @@ export default (variables = variable) => {
       },
       '.note': {
         color: variables.noteTextColor,
-        fontSize: variables.noteFontSize
+        // fontSize: variables.noteFontSize
       },
       '.small': {
         fontSize: variables.btnTextSizeSmall
       },
       '.large': {
         fontSize: variables.btnTextSizeLarge
-      }
+      },
+      '.left': {
+        alignSelf: 'flex-start',
+      },
   };
 
   return textTheme;

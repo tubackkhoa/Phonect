@@ -70,7 +70,7 @@ export default class extends Component {
     const {forwardTo} = this.props    
 
     return (
-      <View style={styles.content} >
+      <Content style={styles.content} >
         {list.map((item, index) =>
           <ListItem key={index} avatar noBorder style={styles.listItemContainer}>
               <Left>
@@ -87,7 +87,7 @@ export default class extends Component {
               </Right>
           </ListItem>   
         )} 
-      </View>
+      </Content>
     )
   }
 
@@ -97,26 +97,18 @@ export default class extends Component {
        
         <Container>         
 
-            <Tabs activeTextColor='red'>
-                <Tab style={styles.container} heading="All">
-                    <Content>     
-                        {this.renderList(options.list)}                      
-                    </Content>
+            <Tabs>
+                <Tab style={styles.container} heading="All">                       
+                    {this.renderList(options.list)}                                          
                 </Tab>
                 <Tab style={styles.container} heading="Admin">
-                    <Content> 
-                        {this.renderList(options.list)}                      
-                    </Content>
+                    {this.renderList(options.list)}
                 </Tab>
                 <Tab style={styles.container} heading="Sale">
-                    <Content> 
-                        {this.renderList(options.list)}                      
-                    </Content>
+                    {this.renderList(options.list)}
                 </Tab>
                 <Tab style={styles.container} heading="Support">
-                    <Content> 
-                        {this.renderList(options.list)}                      
-                    </Content>
+                    {this.renderList(options.list)}
                 </Tab>
             </Tabs>   
             

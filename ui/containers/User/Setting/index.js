@@ -20,7 +20,7 @@ import styles from './styles'
 
 @connect(state=>({  
   initialValues: {
-    interaction: true,
+    
   },
 }), {...commonActions})
 @reduxForm({ form: 'SettingForm', validate})
@@ -36,14 +36,16 @@ export default class extends Component {
           </ListItem>
         }
 
-        <View regit>
+        <View>
           {option.items.map((item, index) =>
             <ListItem style={styles.itemToggle} key={index} onPress={e=>forwardTo(item.route)}>                                                
-              <Text style={styles.itemToggleText}>{item.title}</Text>             
+              <Text style={styles.itemToggleText}>{item.title}</Text>   
+              <Right>          
               {item.type === 'toggle' 
               ? <Field name={item.name} component={SwitchField} />           
               : <Icon gray style={styles.iconRight} name="keyboard-arrow-right" />                
               }
+              </Right>
             </ListItem>
           )}          
         </View>

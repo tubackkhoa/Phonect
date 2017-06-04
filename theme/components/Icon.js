@@ -24,7 +24,7 @@ export default (variables = variable) => {
       color: variables.tabBarActiveTextColor,
     },
     '.small': {
-      fontSize: variables.btnTextSizeSmall
+      fontSize: 10,
     },
   };
 

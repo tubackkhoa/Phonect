@@ -263,7 +263,8 @@ export default {
 
 
     // List
-  listBorderColor: '#464646',
+  listBorderColor: '#E2F0FF',
+  listBorderGrayColor: '#D8D8D8',
   listDividerBg: '#f4f4f4',
   listItemHeight: 45,
   listItemActiveColor: '#c7eafb',
@@ -338,7 +339,7 @@ export default {
     // Other
   borderRadiusBase: 2,
   borderWidth: (1/PixelRatio.getPixelSizeForLayoutSize(1)),
-  contentPadding: 10,
+  contentPadding: 15,
 
   get darkenHeader() {
     return color(this.tabBgColor).darken(0.03).hexString();
@@ -364,5 +365,5 @@ export default {
   blackColor: '#4A4A4A',
   yellowColor: '#FCBA4D',
   blueColor: '#4990E2',
-  backgroundColor: '#fff',
+  backgroundColor: '#FAFDFE',
 };

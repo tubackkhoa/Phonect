@@ -19,32 +19,33 @@ export default (variables = variable) => {
         justifyContent: 'space-between',
         width: '100%',
       },      
-      '.regit': {                
+      '.phonect': {                
         overflow: 'hidden',
         'NativeBase.ListItem': {          
-          borderColor:'#cccccc',
+          borderColor: variables.listBorderColor,
           justifyContent:'space-between',
-          height: 60,
+          height: null,
           marginLeft:0,
           marginRight:0,
-          paddingLeft:20,
-          paddingRight:20,
-          borderBottomWidth:0.5,    
+          paddingLeft:15,
+          paddingRight:15,
+          borderBottomWidth: 1,    
 
           'NativeBase.Icon':{      
             marginRight: -10,                  
           },
           'NativeBase.Text':{
-            width: variable.deviceWidth - 140,
-            fontSize:14,
+            // width: variable.deviceWidth - 140,            
+            fontSize:16,
           },
           '.last': {
             borderBottomWidth:null,
           }            
         },
-
+        borderColor: variables.listBorderColor,
+        borderWidth: 1,
         backgroundColor:'#fff',
-        borderRadius:4,                                  
+        borderRadius: 10,                                  
       },
   };
 

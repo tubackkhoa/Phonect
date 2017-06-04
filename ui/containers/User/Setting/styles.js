@@ -1,3 +1,5 @@
+import material from '~/theme/variables/material'
+
 export default {
   container: {
     marginTop:10,
@@ -14,6 +16,7 @@ export default {
     paddingRight: 0,
     marginLeft: 15,
     marginRight: 15,
+    borderColor: material.listBorderGrayColor,
   },
   itemHeaderText:{
     fontSize:14,

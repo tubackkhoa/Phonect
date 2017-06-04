@@ -11,6 +11,7 @@ import Login from './containers/Login'
 // import UserProfile from './containers/User/Profile'
 import UserSetting from './containers/User/Setting'
 import People from './containers/People/Index'
+import Data from './containers/Data'
 import Call from './containers/Call'
 // import ActivityLog from './containers/ActivityLog'
 // import Network from './containers/Network'
@@ -44,26 +45,15 @@ export default {
         title: 'My Status',
         Page: Home,                
     },  
-    // notification: {
-    //     title: 'Notification',
-    //     Page: Notification,
-    // },   
+    data: {
+        title: 'Data',
+        Page: Data,
+    },   
     people: {
         title: 'People',
         Page: People,
         headerType: 'search',
-    },
-    // 'delegation/detail/:id': {
-    //     title: 'Delegation Detail',
-    //     Page: DelegationDetail,
-    //     headerType: 'back',
-    //     footer: false,
-    // },
-    // 'user/profile': {
-    //     title: 'User Profile',
-    //     Page: UserProfile,
-    //     headerType: 'none',
-    // },  
+    },   
     setting: {
         title: 'Setting',
         Page: UserSetting,
@@ -74,6 +64,17 @@ export default {
         headerType: 'none',
         footerType: 'none',
     },  
+     // 'delegation/detail/:id': {
+    //     title: 'Delegation Detail',
+    //     Page: DelegationDetail,
+    //     headerType: 'back',
+    //     footer: false,
+    // },
+    // 'user/profile': {
+    //     title: 'User Profile',
+    //     Page: UserProfile,
+    //     headerType: 'none',
+    // },  
     // signup1: {
     //     title: 'Sign Up',
     //     Page: SignUpStep1,        
