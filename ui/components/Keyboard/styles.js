@@ -1,15 +1,12 @@
-import React from 'react'
 import { StyleSheet } from 'react-native'
 
-const hairlineWidth = StyleSheet.hairlineWidth
+// const hairlineWidth = StyleSheet.hairlineWidth
 
-export const BG_COLOR = '#d2d5dc'
-
-
-export default StyleSheet.create({
+export default {
     wrapper: {
-        flexDirection: 'row',
-        backgroundColor: '#f4f4f4',
+        flexDirection: 'row',        
+        borderBottomWidth: 2,
+        borderColor: '#E2F0FF',
     },
     main: {
         flex: 1,
@@ -18,38 +15,44 @@ export default StyleSheet.create({
     row: {
         flexDirection: 'row'
     }
-})
+}
 
+export const BG_COLOR = '#d2d5dc'
 
-export const keyStyle = StyleSheet.create({
+export const keyStyle = {
     wrapper: {
         flex: 1,
-        height: 48,
+        height: 55,
         backgroundColor: '#fff'
     },
     bd: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRightWidth: hairlineWidth,
-        borderTopWidth: hairlineWidth,
-        borderColor: '#a5a5a5'
+        borderRightWidth: 2,
+        borderTopWidth: 2,
+        borderColor: '#E2F0FF'
     },
-    border: {
-      borderColor: '#FFF'
+    get border() {
+      return {
+        ...this.bd,
+        borderColor: '#FFF',
+      }      
     },
     mainText: {
-        fontSize: 20,
+        fontSize: 28,
         color: '#000'
     },
     otherText: {
         fontSize: 10,
         color: '#333',
     },
-    bg_d2d5dc: {
-        // backgroundColor: BG_COLOR
-    },
     bgLessL: {
       backgroundColor: '#fff'
+    },
+    dot: {
+        height: 30,
+        fontSize: 30,
+        lineHeight: 25
     }
-})
+}

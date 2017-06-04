@@ -106,7 +106,7 @@ export default {
     return this.fontSizeBase * 0.8;
   },
   get borderRadiusLarge() {
-    return this.fontSizeBase * 3.8;
+    return 5 //this.fontSizeBase * 3.8;
   },
 
   buttonPadding: 6,
@@ -126,11 +126,19 @@ export default {
 
 
       // Color
-  brandPrimary: '#0082e7',
+  get brandPrimary(){
+    return this.blueColor
+  },
   brandInfo: '#5ec9ff',
-  brandSuccess: '#00a651',
-  brandDanger: '#ed1c24',
-  brandWarning: '#f26522',
+  get brandSuccess(){
+    return this.greenColor
+  },
+  get brandDanger(){
+    return this.redColor
+  },
+  get brandWarning(){
+    return this.yellowColor
+  },
   brandSidebar: '#252932',
 
 
