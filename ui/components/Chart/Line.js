@@ -56,11 +56,12 @@ export default class LineChart extends Component {
   }
 
   color(i) {
-    // let color = this.props.options.color
-    // if (!_.isString(this.props.options.color)) color = color.color
-    // let pallete = this.props.pallete || Colors.mix(color || '#9ac7f7')
-    // return Colors.string(cyclic(pallete, i))
     return 'url(#grad)'
+    if(this.props.options.colors) return 'url(#grad)'
+    let color = this.props.options.color
+    if (!_.isString(this.props.options.color)) color = color.color
+    let pallete = this.props.pallete || Colors.mix(color || '#9ac7f7')
+    return Colors.string(cyclic(pallete, i))    
   }
 
   render() {
@@ -68,7 +69,6 @@ export default class LineChart extends Component {
     if (this.props.data === undefined) return (<ReactText>{noDataMsg}</ReactText>)
 
     let options = new Options(this.props)
-
     let accessor = function (key) {
       return function (x) {
         return x[key]
@@ -96,7 +96,7 @@ export default class LineChart extends Component {
     let strokeWidth = typeof(this.props.options.strokeWidth) !== 'undefined' ? this.props.options.strokeWidth : '1';
     let lines = _.map(chart.curves, function (c, i) {
       return <Path key={'lines' + i} d={ c.line.path.print() } 
-      stroke={ '#4990E2' } strokeWidth={strokeWidth} fill="none"/>
+      stroke={this.props.options.stroke} strokeWidth={strokeWidth} fill="none"/>
     }.bind(this))
     let areas = null
 
@@ -161,51 +161,30 @@ export default class LineChart extends Component {
       }.bind(this))
     }
 
-    let returnValue = <Svg width={options.width} height={options.height}>
-     <Defs>
-        <LinearGradient
-                        id="grad"
-                        x1="0%" y1="0%"
-                        x2="0%" y2="100%"
-                    >
-                        <Stop offset="50%"   stopColor="#4990E2" stopOpacity="1"/>
-                        <Stop offset="100%" stopColor="#ffffff" stopOpacity="1"/>
-                    </LinearGradient>
-    </Defs>
-                  <G x={options.margin.left} y={options.margin.top}>
-                        { regions }
-                        { areas }
-                        { lines }
-                      <Axis key="x" scale={chart.xscale} options={options.axisX} 
-                      chartArea={chartArea} />
-                      <Axis key="y" scale={chart.yscale} options={options.axisY} 
-                      chartArea={chartArea} />
-                  </G>
-              </Svg>
+    return (
+      <Svg width={options.width} height={options.height}>
+        {this.props.options.colors && 
+          <Defs>
+              <LinearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                {this.props.options.colors.map((color, index)=>
+                  <Stop 
+                    offset={color.offset || `${Math.round((index/this.props.options.colors.length)*100)}%`} 
+                    key={index} stopColor={color.color || color} stopOpacity="1"/>
+                )}              
+              </LinearGradient>
 
-    return returnValue
+          </Defs>
+        }     
+        <G x={options.margin.left} y={options.margin.top}>
+              { regions }
+              { areas }
+              { lines }
+            <Axis key="x" scale={chart.xscale} options={options.axisX} 
+            chartArea={chartArea} />
+            <Axis key="y" scale={chart.yscale} options={options.axisY} 
+            chartArea={chartArea} />
+        </G>
+      </Svg>
+    )
   }
 }
-
-
-// <Svg
-//     height="300"
-//     width="500"
-// >
-//     <Defs>
-//         <LinearGradient
-//                         id="grad"
-//                         x1="0%" y1="0%"
-//                         x2="0%" y2="100%"
-//                     >
-//                         <Stop offset="0%"   stopColor="#4990E2" stopOpacity="1"/>
-//                         <Stop offset="100%" stopColor="#ffffff" stopOpacity="1"/>
-//                     </LinearGradient>
-//     </Defs>
-//             <Polygon
-//             points="0,100 100,200 200,100 300,400 400,100 500,300"
-//             fill="url(#grad)"
-//             stroke="#4990E2"
-//             strokeWidth="1"
-//         />
-// </Svg>

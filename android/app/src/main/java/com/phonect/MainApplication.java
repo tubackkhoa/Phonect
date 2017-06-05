@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import io.fullstack.oauth.OAuthManagerPackage;
-import com.BV.LinearGradient.LinearGradientPackage;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.oney.WebRTCModule.WebRTCModulePackage;
 import com.rnfs.RNFSPackage;
@@ -31,7 +30,6 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new OAuthManagerPackage(),
-            new LinearGradientPackage(),
             new ReactNativeOneSignalPackage(),
             new WebRTCModulePackage(),
             new RNFSPackage(),

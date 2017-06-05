@@ -142,7 +142,6 @@ android {
 
 dependencies {
     compile project(':react-native-oauth')
-    compile project(':react-native-linear-gradient')
     compile project(':react-native-onesignal')
     compile project(':react-native-webrtc')
     compile project(':react-native-fs')

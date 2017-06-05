@@ -25,7 +25,12 @@ export default {
     chart : {
       width: material.deviceWidth - 40,
       height: 250,
-      color: '#ff0000',
+      stroke: '#4990E2',
+      // gradient
+      colors: [
+        {offset: '50%', color:'#4990E2'},
+        {offset: '100%', color: '#FFFFFF'},
+      ],
       margin: {
         top: 10,
         left: 10,
