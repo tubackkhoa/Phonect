@@ -15,10 +15,10 @@ import { Pie } from '~/ui/components/Chart'
 
  let data = [{
       // "name": "Washington",
-      "population": 75
+      value: 75
     }, {
       // "name": "Oregon",
-      "population": 25
+      value: 25
     }]
 
     let options1 = {
@@ -100,7 +100,7 @@ export default class extends Component {
 
         <Pie data={data}
           options={options1}
-          accessorKey="population"
+          accessorKey="value"
           color={
             [
               material.blueColor,
