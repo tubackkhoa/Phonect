@@ -14,4 +14,5 @@
 // export const documentIcon = require('./images/document.png')
 
 export const avatarImage = require('./images/avatar.png')
+export const subscriptionImage = require('./images/subscription.png')
 export const spashImage = require('./images/splash.jpg')

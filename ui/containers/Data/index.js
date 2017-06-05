@@ -14,7 +14,7 @@ import * as delegationSelectors from '~/store/selectors/delegation'
 import { formatDate } from '~/ui/shared/utils'
 import Tab1 from './components/Tab1'
 import Tab2 from './components/Tab2'
-// import Tab3 from './components/Tab3'
+import Tab3 from './components/Tab3'
 
 // import CacheableImage from '~/ui/components/CacheableImage'
 import Tabs from '~/ui/components/Tabs'
@@ -57,7 +57,7 @@ export default class extends Component {
                     <Tab2/> 
                 </Tab>
                 <Tab style={styles.container} heading="Subscription">
-                    
+                    <Tab3/>
                 </Tab>
             </Tabs>   
             

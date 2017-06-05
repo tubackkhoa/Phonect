@@ -75,7 +75,7 @@ class AxisStruct {
     const fixed = this.options.zeroAxis?this.scale(0):horizontal?yAxis.min:xAxis.min
     const start = {x: horizontal?xAxis.min:fixed, y: horizontal?fixed:yAxis.min}
     const end = {x:horizontal?xAxis.max:fixed,y: horizontal?fixed:yAxis.max}
-    const tailLength = this.options.tailLength || 10
+    const tailLength = +this.options.tailLength
 
     const margin = this.margin
     if (margin !== undefined){
@@ -137,6 +137,10 @@ export default class Axis extends Component {
       options.opacity = 0.5
     }
 
+    if (typeof options.opacity !== 'number') {
+      options.gridOpacity = options.opacity
+    }
+
     if (typeof options.strokeWidth !== 'number') {
       options.strokeWidth = 3
     }
@@ -147,7 +151,7 @@ export default class Axis extends Component {
       const label = options.labelFunction !== undefined? options.labelFunction.apply(this, [c]) : c
       let scaleBase = isNaN(c) ? i : c
       let gxy = horizontal ? [scale(scaleBase),chartArea.y.min]:[chartArea.x.min,scale(scaleBase)]
-
+      const tickValue = options.tickValues[i] || {}
       let returnValue
       if (label !== undefined && label !== null) {
         returnValue =
@@ -156,13 +160,14 @@ export default class Axis extends Component {
                 <Circle r="2" cx="0" cy="0" stroke="grey" fill="grey" />
               }
               {options.showLabels &&
-                <Text x={xy[0]} y={xy[1]}
+                <Text x={tickValue.x === undefined ? xy[0] : tickValue.x} 
+                      y={tickValue.y === undefined ?  xy[1] : tickValue.y}
                       fontFamily={textStyle.fontFamily}
                       fontSize={textStyle.fontSize}
                       fontWeight={textStyle.fontWeight}
                       fontStyle={textStyle.fontStyle}
                       fill={textStyle.fill}
-                      textAnchor={textAnchor}>
+                      textAnchor={tickValue.textAnchor || textAnchor}>
                       {label}
                 </Text>}
           </G>
@@ -174,7 +179,7 @@ export default class Axis extends Component {
 
     const gridLines = options.showLines ? _.map(axis.lines, function (c, i) {
       return (
-               <Path key={'gridLines' + i} d={c.print()} strokeOpacity={options.opacity} stroke={options.gridColor} fill="none"/>
+               <Path key={'gridLines' + i} d={c.print()} strokeOpacity={options.gridOpacity} stroke={options.gridColor} fill="none"/>
             )
     }) : []
 

@@ -62,7 +62,7 @@ export default class extends Component {
 
   renderHeader(center, props) {    
     return (                             
-      <Header {...props} style={styles.container}>                  
+      <Header noShadow {...props} style={styles.container}>                  
         <Body>{center}</Body>        
       </Header>     
     )

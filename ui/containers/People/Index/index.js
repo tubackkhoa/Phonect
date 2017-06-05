@@ -82,7 +82,10 @@ export default class extends Component {
               </Body>
               <Right style={styles.rightContainer}>                                              
                 <Button iconRight noPadder transparent>                  
-                  <Icon green large name="available" /> 
+                  {index % 3 === 1 
+                    ? <Icon red large name="busy" /> 
+                    : <Icon green large name="available" />
+                  }
                 </Button>
               </Right>
           </ListItem>   

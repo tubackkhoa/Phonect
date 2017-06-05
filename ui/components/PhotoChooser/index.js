@@ -33,10 +33,10 @@ export default class extends Component {
   }
 
   render() {
-    const {style} = this.props
+    const {style, iconStyle, icon='photo-camera', ...props} = this.props
     return (
-      <View style={{...styles.container, ...style}}>
-        <Icon name="photo-camera" style={styles.photoIcon} onPress={this._handleImagePickerOpen} />
+      <View style={{...styles.container, ...style}} {...props}>
+        <Icon name={icon} style={{...styles.photoIcon, ...iconStyle}} onPress={this._handleImagePickerOpen} />
       </View>
     )
   }
