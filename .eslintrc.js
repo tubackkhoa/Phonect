@@ -7,6 +7,7 @@ module.exports = {
         "jest/globals": true
     },
     "extends": ["eslint:recommended", "plugin:react-native/all"],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
