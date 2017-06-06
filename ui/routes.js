@@ -1,11 +1,11 @@
-import Home from './containers/Home'
-import NotFound from './containers/NotFound'
+import Home from './containers/Home';
+import NotFound from './containers/NotFound';
 // import Notification from './containers/Notification'
-import Login from './containers/Login'
-import UserSetting from './containers/User/Setting'
-import People from './containers/People/Index'
-import Data from './containers/Data'
-import Call from './containers/Call'
+import Login from './containers/Login';
+import UserSetting from './containers/User/Setting';
+import People from './containers/People/Index';
+import Data from './containers/Data';
+import Call from './containers/Call';
 // import WebRTC from './containers/WebRTC'
 
 // we can use animationType object for each route via Navigator.SceneConfigs
@@ -20,26 +20,26 @@ export default {
         title: 'Call',
         Page: Call,
     },
-    home: {        
+    home: {
         title: 'My Status',
-        Page: Home,                
-    },  
+        Page: Home,
+    },
     data: {
         title: 'Data',
         Page: Data,
-    },   
+    },
     people: {
         title: 'People',
         Page: People,
         headerType: 'search',
-    },   
+    },
     setting: {
         title: 'Setting',
         Page: UserSetting,
-    },       
+    },
     login: {
         title: 'Login',
-        Page: Login,        
+        Page: Login,
         headerType: 'none',
         footerType: 'none',
     },
@@ -48,4 +48,4 @@ export default {
     //     Page: WebRTC,
     // },
 
-}
+};
