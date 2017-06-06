@@ -51,5 +51,39 @@ export default {
     textAlign: 'center',
     width: 96,
     top: 35,
+  },
+  descriptionContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  descriptionInnerContainer: {
+    flex: 1,
+  },
+  descriptionText: {
+    fontSize: 14,
+    marginTop: 10,
+    marginLeft: 10,
+  },
+  chartContainer: {
+    marginTop: 10,
+    paddingBottom: 15,
+    borderBottomWidth:1,
+    borderTopWidth:1,
+    borderColor:material.listBorderColor,
+  },
+  textOfYear: {
+    marginLeft: 20,
+    marginTop:10,
+    fontSize: 10
+  },
+  axisXContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 0,
+    paddingLeft: 20,
+    paddingRight: 15,
+    flex: 1,
   }
 }
