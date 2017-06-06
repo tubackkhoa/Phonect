@@ -21,7 +21,7 @@ import routes from '~/ui/routes'
 
 // this way help copy and paste faster
 import * as commonActions from '~/store/actions/common'
-import * as authActions from '~/store/actions/auth'
+// import * as authActions from '~/store/actions/auth'
 import * as commonSelectors from '~/store/selectors/common'
 
 import Content from '~/ui/components/Content'
@@ -45,7 +45,7 @@ import Icon from '~/ui/elements/Icon'
     email: 'tu@agiletech.vn',
     password: '123456',
   },
-}), {...commonActions, ...authActions})
+}), commonActions)
 @reduxForm({ form: 'LoginForm', validate})
 export default class extends Component {
 

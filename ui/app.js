@@ -138,8 +138,7 @@ export default class App extends Component {
     // first time not show please waiting
     // if (!this.navigator || this.page.Preload === false) {
     //   return this.renderComponentFromPage(this.page)
-    // }
-
+    // }    
     const component = (
       <AfterInteractions firstTime={this.firstTime} placeholder={this.page.Preload || <Preload />}>
         {this.renderComponentFromPage(this.page)}

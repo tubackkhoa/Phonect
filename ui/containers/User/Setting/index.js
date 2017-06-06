@@ -8,6 +8,7 @@ import Content from '~/ui/components/Content'
 
 import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
+import { firebaseConnect, pathToJS, isLoaded } from 'react-redux-firebase'
 
 import * as commonActions from '~/store/actions/common'
 
@@ -18,13 +19,19 @@ import { validate } from './utils'
 import options from './options'
 import styles from './styles'
 
+@firebaseConnect()
 @connect(state=>({  
   initialValues: {
     
   },
-}), {...commonActions})
+}), commonActions)
 @reduxForm({ form: 'SettingForm', validate})
 export default class extends Component {
+  _handleLogout(){
+    const {firebase, forwardTo} = this.props
+    firebase.logout()
+    forwardTo('login', true)
+  }
 
   renderOption(option, key){
     const {forwardTo} = this.props
@@ -65,6 +72,18 @@ export default class extends Component {
         <Container>                    
             <Content padder>
                 {options.listItems.map((item, index)=>this.renderOption(item, index))}
+
+                <Button
+                  onPress={this._handleLogout.bind(this)}
+                  rounded
+                  primary
+                  iconLeft
+                  style={{flex:1, marginTop: 40, marginLeft: 10, marginRight:10}}>
+                  <Text style={{fontSize: 14, width: '100%', textAlign: 'center'}}>
+                    Logout
+                  </Text>
+                </Button>
+
             </Content>                   
         </Container>      
     )

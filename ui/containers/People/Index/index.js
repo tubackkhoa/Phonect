@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {                 
     Button, Container, ListItem, TabHeading, Thumbnail,
-    Text, Item, View, Input, Left, Body, Tab, Right,
+    Text, Item, View, Input, Left, Body, Tab, Right, Spinner,
 } from 'native-base'
 
 import Content from '~/ui/components/Content'
@@ -16,6 +16,7 @@ import {
 } from 'react-redux-firebase'
 
 import * as commonActions from '~/store/actions/common'
+import * as commonSelectors from '~/store/selectors/common'
 import * as authSelectors from '~/store/selectors/auth'
 
 import { formatDate } from '~/ui/shared/utils'
@@ -30,10 +31,14 @@ import styles from './styles'
 
 import { API_BASE } from '~/store/constants/api'
 import { avatarImage } from '~/assets'
+import material from '~/theme/variables/material'
 
-
-@firebase()
-@connect(state=>({
+@firebaseConnect([
+  '/people',
+])
+@connect(state=>({  
+  people: dataToJS(state.firebase, 'people'), // path of firebase data
+  searchString: commonSelectors.getSearchString(state),
 }), commonActions)
 export default class extends Component {
 
@@ -41,24 +46,28 @@ export default class extends Component {
     super(props)
   }
 
-  componentWillMount(){
-    this.componentWillFocus()
+  componentDidMount(){
+    // const { firebase } = this.props    
+    // options.list.forEach(data=>{
+    //   firebase.push('/people', data)  
+    // })    
   }
 
-
-  componentWillFocus(){       
-    
-  }
-
-  renderList(list){
-    const {forwardTo, firebase, todos} = this.props        
-    console.log('todos;', todos, firebase)
-
+  renderList(filteredPeople){
+    if(!filteredPeople){
+      return (
+        <View style={{flex:1, justifyContent:'center'}}>
+          <Text style={{textAlign: 'center'}}>Loading...</Text>
+          <Spinner color={material.textColor} />
+        </View>
+      )
+    }
+    const {people} = this.props      
     return (
       <Content style={styles.content} >
-        {list.map((item, index) =>
+        {filteredPeople.map(id =>
           <ListItem
-            key={index}
+            key={id}
             avatar
             noBorder
             style={styles.listItemContainer}>
@@ -68,15 +77,15 @@ export default class extends Component {
                   source={avatarImage}/>
               </Left>
               <Body>
-                <Text style={styles.textLarge}>Ruth Dennis</Text>
-                <Text>Sale</Text>
+                <Text style={styles.textLarge}>{people[id].name}</Text>
+                <Text>{people[id].role}</Text>
               </Body>
               <Right style={styles.rightContainer}>                                              
                 <Button
                   iconRight
                   noPadder
                   transparent>
-                  {index % 3 === 1 
+                  {people[id].status === 'busy' 
                     ? <Icon
                         red
                         large
@@ -94,31 +103,49 @@ export default class extends Component {
     )
   }
 
+  renderOption(role){
+    const {people} = this.props  
+    const filteredPeople = people && Object.keys(people)
+                    .filter(id=>!role || people[id].role === role)
+    return this.renderList(filteredPeople)
+  }
+
+  renderSearch(searchString){
+    const {people} = this.props  
+    const filteredPeople = people && Object.keys(people)
+          .filter(id=> people[id].name.toLowerCase().indexOf(searchString) !== -1)
+    return this.renderList(filteredPeople)    
+  }
+
   render() {
+    const {searchString} = this.props
     return (
       <Container>
-        <Tabs>
+      {searchString 
+      ? this.renderSearch(searchString.toLowerCase()) 
+      : <Tabs>
           <Tab
             style={styles.container}
             heading="All">
-              {this.renderList(options.list)}
+              {this.renderOption()}
           </Tab>
           <Tab
             style={styles.container}
             heading="Admin">
-              {this.renderList(options.list)}
+              {this.renderOption('Admin')}
           </Tab>
           <Tab
             style={styles.container}
             heading="Sale">
-              {this.renderList(options.list)}
+              {this.renderOption('Sale')}
           </Tab>
           <Tab
             style={styles.container}
             heading="Support">
-              {this.renderList(options.list)}
+              {this.renderOption('Support')}
           </Tab>
         </Tabs>
+      }
       </Container>
     )
   }

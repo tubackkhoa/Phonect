@@ -49,17 +49,25 @@ const store = createStore(
 // then run the saga
 sagaMiddleware.run(rootSaga)
 
-// Enable persistence, give the callback
+// Enable persistence, give the callback,
+// we can not persist the firebase, so we persist token, and use it to login firebase
 const configureStore = callback =>   {  
   // callback(store)
   persistStore(store, {
     storage: AsyncStorage,
-    // whitelist: ['auth'],
+    blacklist: ['firebase'],
     // transforms: [authTransform],
   }, ()=> callback(store))
-    // pure store to test
-    // .purge(['form', 'ui', 'requests', 'router', 'firebase'])    
-  
+  // pure store to test
+  // .purge(['form', 'ui', 'requests', 'router', 'firebase'])    
+
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('./reducers', () => {
+      const nextRootReducer = require('./reducers')
+      store.replaceReducer(nextRootReducer)
+    })
+  }
 }
 
 export default configureStore

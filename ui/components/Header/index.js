@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Keyboard} from 'react-native'
 import { connect } from 'react-redux'
 import {         
     Header, Left, Right, Body,           
@@ -33,6 +34,11 @@ export default class extends Component {
     this.setState({type, title})
   } 
 
+  handleClear(){
+    this._search('')
+    Keyboard.dismiss()
+  }
+
   _search = (value, force=false)=>{
     if((this.props.searchString !== value) || force) {
       this.props.search(value)
@@ -54,7 +60,14 @@ export default class extends Component {
           <Input value={this.props.searchString} 
             autoCorrect={false} onChangeText={this._search} 
             placeholderTextColor="#7A797B" style={styles.searchInput} 
-            placeholder="Search People" />                        
+            placeholder="Search People" />  
+          {!!this.props.searchString.length && 
+          <Icon
+            onPress={this.handleClear.bind(this)}
+            style={styles.closeIcon}
+            name="close"
+          />                      
+          }
       </Item>
     )
     return this.renderHeader(center)    
@@ -70,8 +83,7 @@ export default class extends Component {
 
   render(){
     // events will be 
-    const {type, title} = this.state    
-    console.log(type)
+    const {type, title} = this.state        
     // event will be invoke via pageInstance
     switch(type){
       case 'none':      

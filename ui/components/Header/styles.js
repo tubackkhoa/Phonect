@@ -22,6 +22,10 @@ export default {
     paddingRight:0,
     fontSize: 16,
   },
+  closeIcon: {
+    paddingRight:0,
+    fontSize: 18,
+  },
   title:{
     fontSize: 17,
     fontWeight: '400',
@@ -35,7 +39,7 @@ export default {
   },
   searchInput:{
     height: material.platform === 'ios' ? 30 : 50,    
-    color:'#D8D8D8',
+    color: material.textColor,
     fontSize: 14,
   }
 }

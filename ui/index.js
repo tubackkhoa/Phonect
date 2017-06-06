@@ -7,6 +7,8 @@ import { forwardTo } from '~/store/actions/common'
 import Preload from './containers/Preload'
 import OneSignal from 'react-native-onesignal'
 
+import firebase from 'firebase'
+
 StatusBar.setBarStyle('light-content')
 
 if (!window.navigator.userAgent) {
@@ -17,18 +19,22 @@ export default class extends Component {
 
   constructor(props) {
     super(props)    
-    this.store = null            
+    this.store = null        
   }
 
   componentDidMount(){
     configureStore(store=> {
       // reload app 
-      if(!__DEV__){
-        const firstRoute = store.getState().firebase.auth ? 'home' : 'login'
-        store.dispatch(forwardTo(firstRoute, true))      
-      }
-      this.store = store
-      this.forceUpdate()
+      // if(!__DEV__){
+      //   const firstRoute = store.getState().firebase.auth ? 'home' : 'login'
+      //   store.dispatch(forwardTo(firstRoute, true))      
+      // }
+      firebase.auth().onAuthStateChanged(user => {        
+        const firstRoute = user ? 'home' : 'login'
+        store.dispatch(forwardTo(firstRoute, true))
+        this.store = store
+        this.forceUpdate()
+      })         
     })
   }
 
@@ -62,7 +68,7 @@ export default class extends Component {
   }
 
   onIds(device) {
-    console.log('Device info: ', device);
+    // console.log('Device info: ', device);
   }
 
   shouldComponentUpdate(){

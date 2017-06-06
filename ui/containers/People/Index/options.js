@@ -1,75 +1,112 @@
 export default {
   list:[  
-    {
-      id: 1,
-      icon: 'refresh',
-      user: 'Bank ABC',
-      message: 'has invited you to join a sync form.',
-      time: '2 minutes ago'
+    {      
+      name: 'Ruth Dennis',
+      role: 'Sale',
+      status: 'available',
+    },
+    {      
+      name: 'Elva Hill',
+      role: 'Sale',
+      status: 'available',
+    },
+    {      
+      name: 'Christopher  Myers',
+      role: 'Sale',
+      status: 'available',
+    },
+    {      
+      name: 'Sherman  Boyd',
+      role: 'Sale',
+      status: 'available',
+    },
+    {      
+      name: 'Betsy  Ross',
+      role: 'Sale',
+      status: 'available',
+    },
+    {      
+      name: 'Luther Duncan',
+      role: 'Sale',
+      status: 'busy',
+    },
+    {      
+      name: 'Dwight Roberson',
+      role: 'Sale',
+      status: 'available',
+    },
+    {      
+      name: 'Celia  Mccarthy',
+      role: 'Admin',
+      status: 'available',
+    },
+    {      
+      name: 'Bryan  Mckenzie',
+      role: 'Admin',
+      status: 'available',
+    },
+    {      
+      name: 'Yolanda  Caldwell',
+      role: 'Admin',
+      status: 'available',
+    },
+    {      
+      name: 'Russell Christensen',
+      role: 'Admin',
+      status: 'available',
     },
     {
-      id: 2,
-      icon: 'refresh',
-      user: 'Bank ABC',
-      message: 'has requested to push information to your vault.',
-      time: '10 minutes ago'
+      "name": "Frankie Mendoza",
+      "role": "Support",
+      "status": "available"
     },
     {
-      id: 4,
-      icon: 'cloud-upload',
-      user: 'Son Nguyen',
-      message: 'has invited you to join a sync form.',
-      time: '5 hours ago'
+      "name": "Debra Barnes",
+      "role": "Support",
+      "status": "available"
     },
     {
-      id: 5,
-      icon: 'cloud-upload',
-      user: 'Bank ABC',
-      message: 'has requested to push information to your vault.',
-      time: '5 hours ago'
+      "name": "Molly Bowman",
+      "role": "Support",
+      "status": "available"
     },
     {
-      id: 6,
-      icon: 'network',
-      user: 'Bank ABC',
-      message: 'has invited you to join a sync form.',
-      time: 'Yesterday at 23:49'
+      "name": "Kathleen Shelton",
+      "role": "Support",
+      "status": "available"
     },
     {
-      id: 7,
-      icon: 'network',
-      user: 'Vinh Long',
-      message: 'has requested to push information to your vault.',
-      time: 'Yesterday at 23:49'
+      "name": "Grady Gomez",
+      "role": "Support",
+      "status": "available"
     },
     {
-      id: 8,
-      icon: 'delegation',
-      user: 'Quay Do',
-      message: 'has invited you to join a sync form.',
-      time: '12 March at 23:49'
+      "name": "Alton Terry",
+      "role": "Support",
+      "status": "available"
     },
     {
-      id: 9,
-      icon: 'delegation',
-      user: 'Bank ABC',
-      message: 'has requested to push information to your vault.',
-      time: '12 March at 23:49'
+      "name": "Casey Jenkins",
+      "role": "Support",
+      "status": "available"
     },
     {
-      id: 10,
-      icon: 'refresh',
-      user: 'Bank ABC',
-      message: 'has invited you to join a sync form.',
-      time: '2 minutes ago'
+      "name": "Freddie Turner",
+      "role": "Support",
+      "status": "available"
     },
     {
-      id: 11,
-      icon: 'refresh',
-      user: 'Bank ABC',
-      message: 'has requested to push information to your vault.',
-      time: '10 minutes ago'
+      "name": "Bernadette Rodriguez",
+      "role": "Support",
+      "status": "available"
     },
+    {
+      "name": "Ronnie Boone",
+      "role": "Support",
+      "status": "available"
+    }
+    
+
   ]
 }
 
