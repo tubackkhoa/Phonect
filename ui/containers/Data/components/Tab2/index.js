@@ -55,14 +55,14 @@ export default class extends Component {
             row
             style={styles.descriptionInnerContainer}>
              {this.renderLine(true, material.blueColor)}
-            <Text style={styles.descriptionText}>My data{'\n'}usage</Text>
+            <Text style={styles.descriptionText}>{'My data \nusage'}</Text>
           </View>
   
           <View
             row
             style={styles.descriptionInnerContainer}>
             {this.renderLine(false, material.redColor)}
-            <Text style={styles.descriptionText}>Limited's{'\n'}subscription</Text>
+            <Text style={styles.descriptionText}>{'Limited\'s \nsubscription'}</Text>
           </View>
         </View>
       );
