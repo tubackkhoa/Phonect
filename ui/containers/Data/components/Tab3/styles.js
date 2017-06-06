@@ -63,5 +63,19 @@ export default {
     color: '#fff',
     alignSelf:'center',
     marginTop: 45,
+  },
+  thirdListItemInnerContainer: {
+    width: '100%',
+    marginTop: 10,
+    paddingBottom: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  thirdListItemIcon: {
+    fontSize: 50
+  },
+  buttonContainer: {
+    marginTop: -10,
+    justifyContent: 'space-around'
   }
 }

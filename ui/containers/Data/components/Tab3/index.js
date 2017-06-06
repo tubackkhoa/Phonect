@@ -90,23 +90,15 @@ export default class extends Component {
       <ListItem last={true}>                        
         <View>
           <Text left>Your sim card</Text>
-          <View style={{
-            width: '100%',
-            marginTop: 10,
-            paddingBottom: 10,            
-            flexDirection: 'row',  
-            justifyContent: 'space-around',
-          }}>
-
-            
-              <Icon gray name="hover-sim-card" style={{
-                fontSize: 50,
-              }}/>
-            
-              <Icon active name="new-sim-card" style={{
-                fontSize: 50,
-              }}/>
-            
+          <View style={styles.thirdListItemInnerContainer}>
+              <Icon
+                gray
+                name="hover-sim-card"
+                style={styles.thirdListItemIcon}/>
+              <Icon
+                active
+                name="new-sim-card"
+                style={styles.thirdListItemIcon}/>
           </View>          
         </View>        
       </ListItem>
@@ -119,22 +111,27 @@ export default class extends Component {
     return (
       <Container>                                           
         <Content padder>                          
-          <View phonect style={{
-            marginTop: 5,
-          }}>            
+          <View
+            phonect
+            style={{marginTop: 5}}>
             {this.renderFirstOption()}                                                      
             {this.renderSecondOption()}  
             <ListItem>
-              <View style={{
-                marginTop: -10,
-                justifyContent: 'space-around',
-              }}>
-                <Button rounded primary iconLeft style={{flex:1, marginBottom: 10}}>                  
+              <View style={styles.buttonContainer}>
+                <Button
+                  rounded
+                  primary
+                  iconLeft
+                  style={{flex:1, marginBottom: 10}}>
                   <Text style={{...styles.textSmall, width: '100%', textAlign: 'center'}}>
                     Change subscription
                   </Text>
                 </Button>
-                <Button rounded primary iconLeft style={{flex:1}}>                  
+                <Button
+                  rounded
+                  primary
+                  iconLeft
+                  style={{flex:1}}>
                   <Text style={{...styles.textSmall, width: '100%', textAlign: 'center'}}>
                     View all prices
                   </Text>

@@ -7,7 +7,6 @@ import People from './containers/People/Index'
 import Data from './containers/Data'
 import Call from './containers/Call'
 // import WebRTC from './containers/WebRTC'
-// import Test from './containers/Test'
 
 // we can use animationType object for each route via Navigator.SceneConfigs
 export default {

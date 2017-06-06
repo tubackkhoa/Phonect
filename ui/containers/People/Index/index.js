@@ -25,46 +25,21 @@ import { API_BASE } from '~/store/constants/api'
 import { avatarImage } from '~/assets'
 
 @connect(state=>({
-  // token: authSelectors.getToken(state),
-  // delegation: delegationSelectors.getDelegation(state),
+  
 }), commonActions)
 export default class extends Component {
 
   constructor(props) {
     super(props)
-    // this.state = {
-    //   refreshingIn: false,
-    //   refreshingOut: false,
-    // }
   }
 
   componentWillMount(){
     this.componentWillFocus()
   }
 
-  componentWillFocus(){        
-    // const {token, delegation, getListDelegation} = this.props
-    // later we have the network
-    // !delegation['DelegationIn'] && getListDelegation(token, 'DelegationIn')
-    // !delegation['DelegationOut'] && getListDelegation(token, 'DelegationOut')
-    
-    // always stop refreshing
-    // this.setState({
-    //   refreshingIn: false,
-    //   refreshingOut: false,
-    // })
+  componentWillFocus(){
     
   }
-
-  // _onRefreshIn =() => {
-  //   this.setState({refreshingIn: true})
-  //   this.props.getListDelegation(this.props.token, 'DelegationIn', ()=>this.setState({refreshingIn: false}))    
-  // }   
-
-  // _onRefreshOut =() => {
-  //   this.setState({refreshingOut: true})
-  //   this.props.getListDelegation(this.props.token, 'DelegationOut', ()=>this.setState({refreshingOut: false}))    
-  // }  
 
   renderList(list){
     const {forwardTo} = this.props    
@@ -72,19 +47,34 @@ export default class extends Component {
     return (
       <Content style={styles.content} >
         {list.map((item, index) =>
-          <ListItem key={index} avatar noBorder style={styles.listItemContainer}>
+          <ListItem
+            key={index}
+            avatar
+            noBorder
+            style={styles.listItemContainer}>
               <Left>
-                  <Thumbnail style={styles.thumb} source={avatarImage}/>
+                <Thumbnail
+                  style={styles.thumb}
+                  source={avatarImage}/>
               </Left>
               <Body>
-                  <Text style={styles.textLarge}>Ruth Dennis</Text>                        
-                  <Text>Sale</Text>
+                <Text style={styles.textLarge}>Ruth Dennis</Text>
+                <Text>Sale</Text>
               </Body>
               <Right style={styles.rightContainer}>                                              
-                <Button iconRight noPadder transparent>                  
+                <Button
+                  iconRight
+                  noPadder
+                  transparent>
                   {index % 3 === 1 
-                    ? <Icon red large name="busy" /> 
-                    : <Icon green large name="available" />
+                    ? <Icon
+                        red
+                        large
+                        name="busy"/>
+                    : <Icon
+                        green
+                        large
+                        name="available"/>
                   }
                 </Button>
               </Right>
@@ -94,29 +84,32 @@ export default class extends Component {
     )
   }
 
-  render() {    
-
-    return (          
-       
-        <Container>         
-
-            <Tabs>
-                <Tab style={styles.container} heading="All">                       
-                    {this.renderList(options.list)}                                          
-                </Tab>
-                <Tab style={styles.container} heading="Admin">
-                    {this.renderList(options.list)}
-                </Tab>
-                <Tab style={styles.container} heading="Sale">
-                    {this.renderList(options.list)}
-                </Tab>
-                <Tab style={styles.container} heading="Support">
-                    {this.renderList(options.list)}
-                </Tab>
-            </Tabs>   
-            
-        </Container>
-      
+  render() {
+    return (
+      <Container>
+        <Tabs>
+          <Tab
+            style={styles.container}
+            heading="All">
+              {this.renderList(options.list)}
+          </Tab>
+          <Tab
+            style={styles.container}
+            heading="Admin">
+              {this.renderList(options.list)}
+          </Tab>
+          <Tab
+            style={styles.container}
+            heading="Sale">
+              {this.renderList(options.list)}
+          </Tab>
+          <Tab
+            style={styles.container}
+            heading="Support">
+              {this.renderList(options.list)}
+          </Tab>
+        </Tabs>
+      </Container>
     )
   }
 }
