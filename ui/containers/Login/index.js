@@ -42,8 +42,8 @@ import Icon from '~/ui/elements/Icon'
 @connect(state =>({  
   auth: pathToJS(state.firebase, 'auth'), 
   initialValues:{
-    email: 'tu@agiletech.vn',
-    password: '123456',
+    email: 'contact@qsoftvietnam.com',
+    password: 'qs123123',
   },
 }), {...commonActions, ...authActions})
 @reduxForm({ form: 'LoginForm', validate})
@@ -66,7 +66,7 @@ export default class extends Component {
       // scope.scopes = 'email+profile'
     // const resp = await manager.authorize(socialType, scope)    
       // .signInWithCredential(creds)      
-      // .signInWithEmailAndPassword('tu@agiletech.vn', '123456')
+      // .signInWithEmailAndPassword('', '')
     
   }
 
