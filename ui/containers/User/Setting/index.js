@@ -38,7 +38,8 @@ export default class extends Component {
 
         <View>
           {option.items.map((item, index) =>
-            <ListItem style={styles.itemToggle} key={index} onPress={e=>forwardTo(item.route)}>                                                
+            <ListItem style={styles.itemToggle} key={index} 
+            >                                                
               <Text style={styles.itemToggleText}>{item.title}</Text>   
               <Right>          
               {item.type === 'toggle' 
