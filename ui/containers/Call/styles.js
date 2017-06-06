@@ -25,5 +25,10 @@ export default {
   oneHalf: {
     width: (material.deviceWidth - 40) / 2,
     paddingLeft: 10,        
+  },
+  iconSMS: {
+    position: 'absolute',
+    left: 20,
+    zIndex:9
   }
 }

@@ -45,78 +45,111 @@ export default class extends Component {
 
   render() {
     const {route, goBack, roles, dateIndefinite, handleSubmit} = this.props           
-    return (          
-       
-        <Container>        
-
-            <Content padder>       
-
-              <Field label="Type a name" name="name" component={InputField} />
-
-              <View padder style={styles.mt5} row>
-                <Text>Set a role</Text>
-                <Icon style={styles.iconLabel} name="question" />
-              </View>
-
-              <View regit>                  
-
-                {options.roles.map((item, index) =>
-                <ListItem style={styles.listItemFull} key={index} active={roles[item.name]}>                                                                                                 
-                  <Field label={item.title} large name={item.name} component={CheckBoxField}/>                    
+    return (
+      <Container>
+          <Content padder>
+            <Field
+              label="Type a name"
+              name="name"
+              component={InputField}/>
+            <View
+              padder
+              style={styles.mt5}
+              row>
+              <Text>Set a role</Text>
+              <Icon
+                style={styles.iconLabel}
+                name="question"/>
+            </View>
+            <View regit>
+              {options.roles.map((item, index) =>
+              <ListItem
+                style={styles.listItemFull}
+                key={index}
+                active={roles[item.name]}>
+                <Field
+                  label={item.title}
+                  large name={item.name}
+                  component={CheckBoxField}/>
+              </ListItem>
+              )}
+              <FieldArray
+                name="GroupVaultsPermission"
+                component={renderGroupPermission}/>
+            </View>
+            <View
+              regit
+              style={styles.mt15}
+              full
+              row>
+              <Text style={styles.dateLabel}>Effective date</Text>
+              <Field
+                inputStyle={styles.dateInput}
+                iconStyle={styles.dateIcon}
+                style={styles.dateContainer}
+                name="effectDate"
+                displayFormat="DD MMM YYYY"
+                component={DateField}
+                icon="keyboard-arrow-down" />
+            </View>
+            <View
+              regit
+              style={styles.mt15}>
+              {options.dateIndefinite.map((item, index) =>
+                <ListItem
+                  style={styles.listItemFull}
+                  key={index}
+                  active={dateIndefinite[item.name]}>
+                  <Field
+                    label={item.title}
+                    large
+                    name={item.name}
+                    component={CheckBoxField}/>
                 </ListItem>
-                )}
-                <FieldArray name="GroupVaultsPermission" component={renderGroupPermission}/>                  
-              </View>
-
-              <View regit style={styles.mt15} full row>
-                <Text style={styles.dateLabel}>Effective date</Text>
-                <Field 
+              )}
+              <View
+                full
+                row>
+                <Text style={styles.dateLabel}>End date</Text>
+                <Field
                   inputStyle={styles.dateInput}
                   iconStyle={styles.dateIcon}
-                  style={styles.dateContainer} name="effectDate" 
-                  displayFormat="DD MMM YYYY" component={DateField} icon="keyboard-arrow-down" />
+                  style={styles.dateContainer}
+                  name="endDate"
+                  displayFormat="DD MMM YYYY"
+                  component={DateField}
+                  icon="keyboard-arrow-down"/>
               </View>
-
-
-              <View regit style={styles.mt15}>
-                {options.dateIndefinite.map((item, index) =>
-                  <ListItem style={styles.listItemFull} key={index} active={dateIndefinite[item.name]}>                                                                                                 
-                    <Field label={item.title} large name={item.name} component={CheckBoxField}/>                    
-                  </ListItem>
-                )}
-                
-                <View full row>
-                  <Text style={styles.dateLabel}>End date</Text>
-                  <Field 
-                  inputStyle={styles.dateInput}
-                  iconStyle={styles.dateIcon}
-                  style={styles.dateContainer} name="endDate" displayFormat="DD MMM YYYY" component={DateField} icon="keyboard-arrow-down" />
-                </View>
-              </View>
-
-
-              <Field label="Type a message" name="message" inputStyle={styles.textarea} style={styles.textareaContainer}
-               multiline autoCorrect={false} component={InputField} />    
-
-              <View padder>
-                <Field label={
-                  <Text style={styles.label}>I understand the risk of delegation and agree to the 
-                    <Text style={styles.label} active> Terms & Conditions</Text>
+            </View>
+            <Field
+              label="Type a message"
+              name="message"
+              inputStyle={styles.textarea}
+              style={styles.textareaContainer}
+              multiline
+              autoCorrect={false}
+              component={InputField}/>
+            <View padder>
+              <Field
+                label={
+                  <Text style={styles.label}>I understand the risk of delegation and agree to the
+                    <Text
+                      style={styles.label}
+                      active> Terms & Conditions</Text>
                   </Text>
-                } large name="agree" component={CheckBoxField}/>    
-              </View>
-
-              <Button onPress={handleSubmit(this._handleInvite)} style={styles.button} block>
-                <Text>Invite</Text>
-              </Button>  
-
-
-            </Content>
-
-            
-            
-        </Container>
-      
+                }
+                large
+                name="agree"
+                component={CheckBoxField}/>
+            </View>
+            <Button
+              onPress={handleSubmit(this._handleInvite)}
+              style={styles.button}
+              block>
+              <Text>Invite</Text>
+            </Button>
+          </Content>
+      </Container>
     )
   }
 }

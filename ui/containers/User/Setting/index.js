@@ -29,17 +29,22 @@ export default class extends Component {
   renderOption(option, key){
     const {forwardTo} = this.props
     return (
-      <View style={styles.container} key={key}>
+      <View
+        style={styles.container}
+        key={key}>
         {option.title && 
-          <ListItem noBorder style={styles.itemHeader}>
-              <Text style={styles.itemHeaderText}>{option.title}</Text>
+          <ListItem
+            noBorder
+            style={styles.itemHeader}>
+            <Text style={styles.itemHeaderText}>{option.title}</Text>
           </ListItem>
         }
 
         <View>
           {option.items.map((item, index) =>
-            <ListItem style={styles.itemToggle} key={index} 
-            >                                                
+            <ListItem
+              style={styles.itemToggle}
+              key={index}>
               <Text style={styles.itemToggleText}>{item.title}</Text>   
               <Right>          
               {item.type === 'toggle' 

@@ -63,17 +63,28 @@ export default class extends Component {
     const {selected} = this.state
     const color = options.colorMap[selected]
     return (
-      <ListItem avatar noBorder style={styles.profileHeaderContainer}>
+      <ListItem
+        avatar
+        noBorder
+        style={styles.profileHeaderContainer}>
           <Left>
-              <Thumbnail style={styles.thumb} source={avatarImage}/>
+              <Thumbnail
+                style={styles.thumb}
+                source={avatarImage}/>
           </Left>
           <Body>
               <Text large>Willie Stewart</Text>                        
               <Text>Sale</Text>
           </Body>
-          <Right style={styles.rightContainer}>                    
-            <Button iconRight noPadder transparent>
-              <Icon name={selected} style={{...styles.iconLarge, color}}/> 
+          <Right style={styles.rightContainer}>                                
+            <Button
+              iconRight
+              noPadder
+              transparent>
+              <Icon
+                red
+                name={selected} 
+                style={{...styles.iconLarge, color}}/>
             </Button>
           </Right>
       </ListItem> 
@@ -87,8 +98,13 @@ export default class extends Component {
         ...styles[icon === this.state.selected ? 'optionContainerActive' : 'optionContainer'], 
         ...style
       }}>
-        <Button transparent onPress={()=>this.setState({selected:icon})} style={styles.optionButton}>
-          <Icon name={icon} style={{...styles.optionIcon, color}} />    
+        <Button
+          transparent
+          onPress={()=>this.setState({selected:icon})}
+          style={styles.optionButton}>
+          <Icon
+            name={icon}
+            style={{...styles.optionIcon, color}} />
           <Text style={styles.optionText}>{title}</Text>                      
         </Button>        
       </Col>

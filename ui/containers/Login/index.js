@@ -109,14 +109,21 @@ export default class extends Component {
           // </View>  
         }
           <Form style={styles.form}>                
-            <Field autoCapitalize="none" name="email"             
+            <Field
+              autoCapitalize="none"
+              name="email"
               icon={(input, active)=>input.value && active ? 'close' : false}
               iconStyle={{color:'#000'}}
               onIconPress={input=>input.onChange('')}
-              label="Email/ Số điện thoại" component={InputField} />
-            <Field name="password" 
-              label="Mật khẩu" secureTextEntry={true} component={InputField} />              
-            <Button onPress={handleSubmit(this._handleLogin)} 
+              label="Email/ Số điện thoại"
+              component={InputField}/>
+            <Field
+              name="password"
+              label="Mật khẩu"
+              secureTextEntry={true}
+              component={InputField}/>
+            <Button
+              onPress={handleSubmit(this._handleLogin)}
               style={styles.button}>
               <Text>Sign in</Text>
             </Button>
