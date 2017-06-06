@@ -32,7 +32,7 @@ export default class extends Component {
               <Text>84 123 456 78</Text>
 
               <Text style={styles.textOfCompany} note>Name of company</Text>
-              <Text note>Agiletech.vn</Text>
+              <Text note>Phonect</Text>
           </View>
                           
           <View style={styles.avatarContainer}>      
