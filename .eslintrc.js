@@ -21,7 +21,7 @@ module.exports = {
     ],
     "rules": {
         "indent": ["error", 4],
-        "semi": 2,
+        "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
         "quotes": ["error", "single"],
         "react/jsx-uses-react": 2,
         "react/jsx-uses-vars": 2,
