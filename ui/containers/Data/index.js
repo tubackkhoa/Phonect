@@ -53,7 +53,7 @@ export default class extends Component {
                 <Tab style={styles.container} heading="This month">                    
                     <Tab1/>                                        
                 </Tab>
-                <Tab style={styles.container} heading="Last 6 month">
+                <Tab style={styles.container} heading="Last 6 months">
                     <Tab2/> 
                 </Tab>
                 <Tab style={styles.container} heading="Subscription">

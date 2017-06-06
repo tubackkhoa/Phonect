@@ -14,6 +14,7 @@ export default {
   },
   textSmall: {
     fontSize: 14,
+    letterSpacing: -0.5,
   },
   buttonContainer: {
     flexDirection: 'row',    
