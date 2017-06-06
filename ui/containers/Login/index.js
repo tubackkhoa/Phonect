@@ -15,11 +15,7 @@ import { connect } from 'react-redux'
 import { firebaseConnect, pathToJS, isLoaded } from 'react-redux-firebase'
 import { Field, reduxForm } from 'redux-form'
 
-// import OAuthManager from 'react-native-oauth'
-
 import routes from '~/ui/routes'
-
-// this way help copy and paste faster
 import * as commonActions from '~/store/actions/common'
 import * as authActions from '~/store/actions/auth'
 import * as commonSelectors from '~/store/selectors/common'
@@ -32,12 +28,6 @@ import { spashImage } from '~/assets'
 
 import Icon from '~/ui/elements/Icon'
 
-// import { SOCIAL_CONFIG } from '~/store/constants/api'
-
-// const manager = new OAuthManager('novame')
-
-// manager.configure(SOCIAL_CONFIG)
-
 @firebaseConnect()
 @connect(state =>({  
   auth: pathToJS(state.firebase, 'auth'), 
@@ -48,26 +38,11 @@ import Icon from '~/ui/elements/Icon'
 }), {...commonActions, ...authActions})
 @reduxForm({ form: 'LoginForm', validate})
 export default class extends Component {
-
-  // _handleLogin = ({email, password}) => {    
-  //   this.props.login(email, password)
-  // }
-
   constructor(props) {
     super(props)    
     this.state = {
       loading: false,
     }
-  }
-
-  async handleLogin(socialType = 'google'){    
-    // const scope = {}
-    // if(socialType === 'google') 
-      // scope.scopes = 'email+profile'
-    // const resp = await manager.authorize(socialType, scope)    
-      // .signInWithCredential(creds)      
-      // .signInWithEmailAndPassword('', '')
-    
   }
 
   _handleLogin = async ({email, password}) => {   
@@ -97,17 +72,7 @@ export default class extends Component {
         <Image source={spashImage} style={styles.splash}/>    
                                
         <View style={styles.bottomContainer}>
-          <Text style={styles.textLogo}>PHONECT</Text>      
-          {
-
-
-          // <View style={styles.socialButtons}>
-          //   <Button full iconLeft style={styles.socialButton} onPress={()=>this.handleLogin('google')}>
-          //       <Icon name="google-plus" style={styles.socialButtonIcon}/>
-          //       <Text>Login with Google</Text>
-          //   </Button>           
-          // </View>  
-        }
+          <Text style={styles.textLogo}>PHONECT</Text>
           <Form style={styles.form}>                
             <Field
               autoCapitalize="none"
@@ -127,11 +92,8 @@ export default class extends Component {
               style={styles.button}>
               <Text>Sign in</Text>
             </Button>
-                     
           </Form>
-          
         </View>
-
       </Container>
     )
   }

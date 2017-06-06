@@ -20,16 +20,8 @@ import { avatarImage } from '~/assets'
 import options from './options'
 import styles from './styles'
 
-
-// @firebaseConnect([
-//   '/todos'
-//   // { path: '/todos' } // object notation
-// ])
 @connect(state=>({  
-  // todos: dataToJS(state.firebase, '/todos'), // path of firebase data
-  // token: authSelectors.getToken(state),
-  // activeCampaign: campaignSelectors.getActiveCampaign(state),
-  // getActiveCampaignRequest: commonSelectors.getRequest(state, 'getActiveCampaign'),  
+    
 }), commonActions)
 export default class extends Component {
 
@@ -37,7 +29,6 @@ export default class extends Component {
     super(props)
 
     this.state = {
-      // refreshing: false,
       selected: 'busy',
     }    
   }
@@ -47,17 +38,8 @@ export default class extends Component {
   }
 
   componentWillFocus(){
-    // this.setState({
-    //   refreshing: false,
-    // })        
+            
   }
-
-  _onRefresh =() => {
-    // this.setState({refreshing: true})    
-    // const { firebase, todos } = this.props
-    // firebase.push('/todos', { text:'new value', done:false })
-    //   .then(() => this.setState({ refreshing: false }))                
-  }    
 
   renderProfileHeader(){
     const {selected} = this.state
