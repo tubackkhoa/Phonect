@@ -7,6 +7,7 @@ module.exports = {
         "jest/globals": true
     },
     "extends": ["eslint:recommended", "plugin:react-native/all"],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -20,8 +21,7 @@ module.exports = {
         "jest"
     ],
     "rules": {
-        "indent": ["error", 4],
-        "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
+        "semi": "off",
         "quotes": ["error", "single"],
         "react/jsx-uses-react": 2,
         "react/jsx-uses-vars": 2,
