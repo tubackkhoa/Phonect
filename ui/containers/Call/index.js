@@ -53,7 +53,9 @@ export default class extends Component {
             <Content>   
 
               <View style={styles.inputContainer}>
-                <Text small active>Type number</Text>             
+                <Text
+                  small
+                  active>Type number</Text>
                 <Text style={styles.textLarge}>XXX-XXX-XXX</Text>
               </View>
 
@@ -62,22 +64,35 @@ export default class extends Component {
                     isRenderDot={true}
                     onClear={this._handleClear.bind(this)}
                     onDelete={this._handleDelete.bind(this)}
-                    onKeyPress={this._handleKeyPress.bind(this)}
-                />
+                    onKeyPress={this._handleKeyPress.bind(this)}/>
               </View>
               <View style={styles.buttonContainer}>
-                <Button rounded style={styles.oneHalf} primary iconLeft>
+                <Button
+                  rounded
+                  style={styles.oneHalf}
+                  primary
+                  iconLeft>
                   <Icon name="mobile" />
                   <Text style={styles.textSmall}>Call from mobile</Text>
                 </Button>
-                <Button rounded style={styles.oneHalf} primary iconLeft>
+                <Button
+                  rounded
+                  style={styles.oneHalf}
+                  primary
+                  iconLeft>
                   <Icon name="company" />
                   <Text style={styles.textSmall}>Call from company</Text>
                 </Button>
               </View>
               <View style={styles.buttonContainer}>
-                <Button rounded success iconLeft style={{flex:1}}>
-                  <Icon name="sms" style={{position: 'absolute', left: 20, zIndex:9}} />
+                <Button
+                  rounded
+                  success
+                  iconLeft
+                  style={{flex:1}}>
+                  <Icon
+                    name="sms"
+                    style={styles.iconSMS} />
                   <Text style={{...styles.textSmall, width: '100%', textAlign: 'center'}}>SMS from company</Text>
                 </Button>
               </View>              

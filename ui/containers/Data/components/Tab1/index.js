@@ -46,28 +46,33 @@ export default class extends Component {
 
   renderOption(option, key, last){    
     return (      
-      <ListItem key={key} last={last} style={{
-        flexDirection: 'column', 
-        alignItems:'flex-start',        
-      }}>                
+      <ListItem
+        key={key}
+        last={last}
+        style={styles.listItemContainer}>
         <Text left>{option.title}</Text>
-        <View row style={{
-            marginTop: 10,
-            width: '100%',            
-            justifyContent: 'space-between',
-          }}>
+        <View
+          row
+          style={styles.listItemInnerContainer}>
           <View row>
-            <Text active large>{option.total}</Text>
-            <Text note style={{
-              marginTop: 5,
-            }}> {option.quantity}</Text>
+            <Text
+              active
+              large>{option.total}</Text>
+            <Text
+              note
+              style={styles.normalText}> {option.quantity}</Text>
           </View>
           <View row>
-            <Icon name="up-arrow" small green />
-            <Text active large> {option.increased}</Text>
-            <Text note style={{
-              marginTop: 5,
-            }}> {option.quantity}</Text>
+            <Icon
+              name="up-arrow"
+              small
+              green/>
+            <Text
+              active
+              large> {option.increased}</Text>
+            <Text
+              note
+              style={styles.normalText}> {option.quantity}</Text>
           </View>
         </View>
       </ListItem>
@@ -81,19 +86,23 @@ export default class extends Component {
           flexDirection: 'column',        
         }}>
           <Text left>Mobile data traffic</Text>
-          <View row style={{
-            marginTop: 10,
-          }}>
-            <Text active large>800</Text>
-            <Text note style={{
-              marginTop: 5,
-            }}> mb</Text>
+          <View
+            row
+            style={styles.normalText}>
+            <Text
+              active
+              large>800</Text>
+            <Text
+              note
+              style={styles.normalText}> mb</Text>
           </View>
           <View row>
-            <Text active large>0.75</Text>
-            <Text note style={{
-              marginTop: 5,
-            }}>/ 1GB</Text>
+            <Text
+              active
+              large>0.75</Text>
+            <Text
+              note
+              style={styles.normalText}>/ 1GB</Text>
           </View>
         </View>
         <Right>
@@ -110,33 +119,10 @@ export default class extends Component {
           r={38}
           R={48}
           />
-          <Text active large style={{
-                position: 'absolute',
-                textAlign: 'center',
-                width: 96,                              
-                top: 35,
-              }}>75%</Text> 
-{
-          // <AnimatedCircularProgress
-          //   size={96}
-          //   width={10}
-          //   fill={75}
-          //   rotation={0}
-          //   tintColor={material.blueColor}
-          //   backgroundColor="#E2EFFF" 
-          //   children={fill => (
-          //     <Text active large style={{
-          //       position: 'absolute',
-          //       textAlign: 'center',
-          //       width: 96,                              
-          //       top: 33,
-          //     }}>
-          //         { Math.round(fill) }%
-          //     </Text>              
-          //   )}
-          // />
-
-        }
+          <Text
+            active
+            large
+            style={styles.percentText}>75%</Text>
         </Right>
       </ListItem>
     )

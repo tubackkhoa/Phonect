@@ -33,5 +33,23 @@ export default {
     alignItems: 'center',
     bottom:0,
     left:10,    
-  }, 
+  },
+  listItemContainer: {
+    flexDirection: 'column',
+    alignItems:'flex-start'
+  },
+  listItemInnerContainer: {
+    marginTop: 10,
+    width: '100%',
+    justifyContent: 'space-between'
+  },
+  normalText: {
+    marginTop: 5
+  },
+  percentText: {
+    position: 'absolute',
+    textAlign: 'center',
+    width: 96,
+    top: 35,
+  }
 }
