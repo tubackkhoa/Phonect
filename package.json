@@ -38,6 +38,7 @@
     "redux-form": "^6.6.1",
     "redux-logger": "^3.0.0",
     "redux-persist": "^4.5.0",
+    "redux-persist-immutable": "^4.3.0",
     "redux-saga": "^0.14.4",
     "socket.io": "^2.0.1",
     "socket.io-client": "^2.0.1",

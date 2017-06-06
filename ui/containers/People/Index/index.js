@@ -6,10 +6,17 @@ import {
 
 import Content from '~/ui/components/Content'
 import { connect } from 'react-redux'
-import * as delegationActions from '~/store/actions/delegation'
+
+import {
+  firebaseConnect,
+  isLoaded,
+  isEmpty,
+  dataToJS,
+  firebase,
+} from 'react-redux-firebase'
+
 import * as commonActions from '~/store/actions/common'
 import * as authSelectors from '~/store/selectors/auth'
-import * as delegationSelectors from '~/store/selectors/delegation'
 
 import { formatDate } from '~/ui/shared/utils'
 
@@ -24,8 +31,9 @@ import styles from './styles'
 import { API_BASE } from '~/store/constants/api'
 import { avatarImage } from '~/assets'
 
+
+@firebase()
 @connect(state=>({
-  
 }), commonActions)
 export default class extends Component {
 
@@ -37,12 +45,14 @@ export default class extends Component {
     this.componentWillFocus()
   }
 
-  componentWillFocus(){
+
+  componentWillFocus(){       
     
   }
 
   renderList(list){
-    const {forwardTo} = this.props    
+    const {forwardTo, firebase, todos} = this.props        
+    console.log('todos;', todos, firebase)
 
     return (
       <Content style={styles.content} >

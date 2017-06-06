@@ -17,6 +17,7 @@ import * as campaignActions from '~/store/actions/campaign'
 import material from '~/theme/variables/material'
 import { avatarImage } from '~/assets'
 
+import options from './options'
 import styles from './styles'
 
 
@@ -37,7 +38,7 @@ export default class extends Component {
 
     this.state = {
       // refreshing: false,
-      selected: null,
+      selected: 'busy',
     }    
   }
 
@@ -59,6 +60,8 @@ export default class extends Component {
   }    
 
   renderProfileHeader(){
+    const {selected} = this.state
+    const color = options.colorMap[selected]
     return (
       <ListItem
         avatar
@@ -73,22 +76,23 @@ export default class extends Component {
               <Text large>Willie Stewart</Text>                        
               <Text>Sale</Text>
           </Body>
-          <Right style={styles.rightContainer}>                    
+          <Right style={styles.rightContainer}>                                
             <Button
               iconRight
               noPadder
               transparent>
               <Icon
                 red
-                name="busy"
-                style={styles.iconLarge}/>
+                name={selected} 
+                style={{...styles.iconLarge, color}}/>
             </Button>
           </Right>
       </ListItem> 
     )
   }
 
-  renderStatusOption(title, icon, color, style){
+  renderStatusOption(title, icon, style){
+    const color = options.colorMap[icon] 
     return (
       <Col style={{
         ...styles[icon === this.state.selected ? 'optionContainerActive' : 'optionContainer'], 
@@ -120,19 +124,19 @@ export default class extends Component {
 
                 <Grid style={styles.statusOptionsContainer}>
                   <Row>
-                    {this.renderStatusOption('Available', 'available', material.greenColor, {borderTopLeftRadius:10})}
-                    {this.renderStatusOption('Busy', 'busy', material.redColor, {borderTopRightRadius:10})}
+                    {this.renderStatusOption('Available', 'available', {borderTopLeftRadius:10})}
+                    {this.renderStatusOption('Busy', 'busy', {borderTopRightRadius:10})}
                   </Row>
                   <Row>
-                    {this.renderStatusOption('Meeting', 'meeting', material.violetColor)}
-                    {this.renderStatusOption('Gone home', 'home', material.blackColor)}
+                    {this.renderStatusOption('Meeting', 'meeting')}
+                    {this.renderStatusOption('Gone home', 'home')}
                   </Row>
                   <Row>
-                    {this.renderStatusOption('Away', 'away', material.yellowColor)}
-                    {this.renderStatusOption('Sick', 'sick', material.redColor)}
+                    {this.renderStatusOption('Away', 'away')}
+                    {this.renderStatusOption('Sick', 'sick')}
                   </Row>
                   <Row>                          
-                    {this.renderStatusOption('Holiday', 'holiday', material.blueColor, {borderBottomLeftRadius:10, borderBottomRightRadius:10})}            
+                    {this.renderStatusOption('Holiday', 'holiday', {borderBottomLeftRadius:10, borderBottomRightRadius:10})}            
                   </Row>
                 </Grid>
 
