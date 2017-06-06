@@ -73,7 +73,7 @@ export default class extends Component {
        
         <Container>         
             
-            <Content>   
+            <Content style={{marginBottom:20}}>   
 
               <View style={styles.inputContainer}>
                 <Text
