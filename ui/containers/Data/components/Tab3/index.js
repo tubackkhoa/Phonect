@@ -7,7 +7,7 @@ import {
   Form, Item, Switch, View,
 } from 'native-base'
 
-import styles from '../shared/styles'
+import styles from './styles'
 
 import Content from '~/ui/components/Content'
 import Icon from '~/ui/elements/Icon'
@@ -23,34 +23,26 @@ export default class extends Component {
 
   renderFirstOption(){
     return (
-      <ListItem avatar style={{
-        borderBottomWidth: 1,
-        paddingBottom: 20,
-        paddingTop: 10,
-      }}>
-        <View style={{
-          flexDirection: 'row',          
-          flex: 1,
-          paddingRight: 15,
-          justifyContent: 'space-between',
-        }}>
+      <ListItem
+        avatar
+        style={styles.firstListItemContainer}>
+        <View style={styles.firstListItemInnerContainer}>
           <View>
               <Text large>Willie Stewart</Text>                        
               <Text>84 123 456 78</Text>
 
-              <Text style={{
-                marginTop: 10,
-              }} note>Name of company</Text>
+              <Text style={styles.textOfCompany} note>Name of company</Text>
               <Text note>Agiletech.vn</Text>
           </View>
                           
           <View style={styles.avatarContainer}>      
-            <Image source={avatarImage} style={styles.avatar}/>
-            <PhotoChooser icon="add" style={styles.photoIcon} 
-              iconStyle={{
-                fontSize: 14,
-                color: material.blueColor,                  
-              }}
+            <Image
+              source={avatarImage}
+              style={styles.avatar}/>
+            <PhotoChooser
+              icon="add"
+              style={styles.photoIcon}
+              iconStyle={styles.iconOfPhotoChooser}
               onSuccess={this._handleChoosePhoto}/>                    
           </View> 
 
@@ -62,37 +54,32 @@ export default class extends Component {
   renderSecondOption(){
     return (
       <ListItem last={true}>                        
-        <View style={{
-          flexDirection: 'column',        
-        }}>
+        <View style={styles.secondListItemInnerContainer}>
           <Text left>Your subscription</Text>
-          <View row style={{
-            marginTop: 10,
-          }}>
-            <Text active large>Silver</Text>
+          <View
+            row
+            style={{marginTop: 10}}>
+            <Text
+              active
+              large>Silver</Text>
           </View>
           <View row>
-            <Text active large>$99</Text>
-            <Text note style={{
-              marginTop: 5,
-            }}>/ month</Text>
+            <Text
+              active
+              large>$99</Text>
+            <Text
+              note
+              style={{marginTop: 5}}>/ month</Text>
           </View>
         </View>
         <Right>
-
-          <Image source={subscriptionImage} style={{
-            width: 100,
-            height: 100,
-            resizeMode: 'contain',
-          }}>
-            <Text large style={{
-              color: '#fff',
-              alignSelf:'center',
-              marginTop: 45,
-            }}>Silver</Text>
+          <Image
+            source={subscriptionImage}
+            style={styles.rightImage}>
+            <Text
+              large
+              style={styles.centerText}>Silver</Text>
           </Image>
-           
-
         </Right>
       </ListItem>
     )
