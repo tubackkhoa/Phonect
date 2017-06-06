@@ -69,31 +69,34 @@ export default class extends Component {
 
     return (
       <Container style={styles.container}>
-        <Image source={spashImage} style={styles.splash}/>    
+        <Image source={spashImage} style={styles.splash}>    
                                
-        <View style={styles.bottomContainer}>
-          <Text style={styles.textLogo}>PHONECT</Text>
-          <Form style={styles.form}>                
-            <Field
-              autoCapitalize="none"
-              name="email"
-              icon={(input, active)=>input.value && active ? 'close' : false}
-              iconStyle={{color:'#000'}}
-              onIconPress={input=>input.onChange('')}
-              label="Email/ Số điện thoại"
-              component={InputField}/>
-            <Field
-              name="password"
-              label="Mật khẩu"
-              secureTextEntry={true}
-              component={InputField}/>
-            <Button
-              onPress={handleSubmit(this._handleLogin)}
-              style={styles.button}>
-              <Text>Sign in</Text>
-            </Button>
-          </Form>
-        </View>
+          <View style={styles.bottomContainer}>
+            <Text style={styles.textLogo}>PHONECT</Text>
+            <Form style={styles.form}>                
+              <Field
+                autoCapitalize="none"
+                name="email"
+                icon={(input, active)=>input.value && active ? 'close' : false}
+                iconStyle={{color:'#000'}}
+                onIconPress={input=>input.onChange('')}
+                label="Email/ Số điện thoại"
+                component={InputField}/>
+              <Field
+                name="password"
+                label="Mật khẩu"
+                secureTextEntry={true}
+                component={InputField}/>
+              <Button
+                onPress={handleSubmit(this._handleLogin)}
+                style={styles.button}>
+                <Text>Sign in</Text>
+              </Button>
+            </Form>
+          </View>
+
+        </Image>
+        
       </Container>
     )
   }

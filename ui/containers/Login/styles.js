@@ -1,3 +1,5 @@
+import material from '~/theme/variables/material'
+
 export default {
   container: {    
     flex: 1,
@@ -23,9 +25,6 @@ export default {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
-    position: 'absolute',
-    top: 0,
-    left: 0,                  
   },
   textLogo: {
     color: '#fff',
@@ -34,11 +33,8 @@ export default {
     fontSize: 30,
     backgroundColor: 'transparent',          
   },
-  bottomContainer:{
-    position: 'absolute',
-    top: '40%',
-    left: 0,
-    marginTop:40,
+  bottomContainer:{    
+    marginTop: material.deviceHeight * 0.5,        
     width: '100%',
     alignItems: 'center',
   },
