@@ -36,6 +36,7 @@ export default {
   bottomContainer:{    
     marginTop: material.deviceHeight * 0.5,        
     width: '100%',
+    height: material.deviceHeight * 0.5,
     alignItems: 'center',
   },
   socialButtons: {        
