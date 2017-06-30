@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
+import { FlatList } from 'react-native'
 import {                 
     Button, Container, ListItem, TabHeading, Thumbnail,
     Text, Item, View, Input, Left, Body, Tab, Right, Spinner,
 } from 'native-base'
 
 import Content from '~/ui/components/Content'
+import Header from '~/ui/components/Header'
 import { connect } from 'react-redux'
 
-import {
-  firebaseConnect,
-  isLoaded,
-  isEmpty,
-  dataToJS,
-  firebase,
-} from 'react-redux-firebase'
+// import {
+//   firebaseConnect,
+//   isLoaded,
+//   isEmpty,
+//   dataToJS,
+//   firebase,
+// } from 'react-redux-firebase'
 
 import * as commonActions from '~/store/actions/common'
 import * as commonSelectors from '~/store/selectors/common'
@@ -33,24 +35,21 @@ import { API_BASE } from '~/store/constants/api'
 import { avatarImage } from '~/assets'
 import material from '~/theme/variables/material'
 
-@firebaseConnect([
-  '/people',
-])
-@connect(state=>({  
-  people: dataToJS(state.firebase, 'people'), // path of firebase data
-  searchString: commonSelectors.getSearchString(state),
-}), commonActions)
+// @firebaseConnect([
+//   '/people',
+// // ])
+// @connect(state=>({  
+//   // people: options.list,
+//   // people: dataToJS(state.firebase, 'people'), // path of firebase data
+//   // searchString: commonSelectors.getSearchString(state),
+// }), commonActions)
 export default class extends Component {
 
   constructor(props) {
     super(props)
-  }
-
-  componentDidMount(){
-    // const { firebase } = this.props    
-    // options.list.forEach(data=>{
-    //   firebase.push('/people', data)  
-    // })    
+    this.state={
+      searchString: '',
+    }
   }
 
   renderList(filteredPeople){
@@ -62,12 +61,13 @@ export default class extends Component {
         </View>
       )
     }
-    const {people} = this.props      
+      
     return (
-      <Content style={styles.content} >
-        {filteredPeople.map(id =>
-          <ListItem
-            key={id}
+      <Content style={styles.content} >        
+        <FlatList data={filteredPeople}
+          removeClippedSubviews={false}
+          renderItem={({item}) =>
+          <ListItem            
             avatar
             noBorder
             style={styles.listItemContainer}>
@@ -77,15 +77,15 @@ export default class extends Component {
                   source={avatarImage}/>
               </Left>
               <Body>
-                <Text style={styles.textLarge}>{people[id].name}</Text>
-                <Text>{people[id].role}</Text>
+                <Text style={styles.textLarge}>{item.name}</Text>
+                <Text>{item.role}</Text>
               </Body>
               <Right style={styles.rightContainer}>                                              
                 <Button
                   iconRight
                   noPadder
                   transparent>
-                  {people[id].status === 'busy' 
+                  {item.status === 'busy' 
                     ? <Icon
                         red
                         large
@@ -98,29 +98,30 @@ export default class extends Component {
                 </Button>
               </Right>
           </ListItem>   
-        )} 
+        }/> 
       </Content>
     )
   }
 
   renderOption(role){
-    const {people} = this.props  
-    const filteredPeople = people && Object.keys(people)
-                    .filter(id=>!role || people[id].role === role)
+    
+    const filteredPeople = role ? options.list.filter(item=>item.role === role) : options.list
     return this.renderList(filteredPeople)
   }
 
   renderSearch(searchString){
-    const {people} = this.props  
-    const filteredPeople = people && Object.keys(people)
-          .filter(id=> people[id].name.toLowerCase().indexOf(searchString) !== -1)
+    
+    const filteredPeople = options.list.filter(
+      item=> item.name.toLowerCase().indexOf(searchString) !== -1
+    )
     return this.renderList(filteredPeople)    
   }
 
   render() {
-    const {searchString} = this.props
+    const {searchString} = this.state
     return (
       <Container>
+      <Header title="People" type="search" onSearch={searchString=>this.setState({searchString})} />
       {searchString 
       ? this.renderSearch(searchString.toLowerCase()) 
       : <Tabs>

@@ -5,6 +5,7 @@ import {
 } from 'native-base'
 
 import Content from '~/ui/components/Content'
+import Header from '~/ui/components/Header'
 import { connect } from 'react-redux'
 import * as delegationActions from '~/store/actions/delegation'
 import * as commonActions from '~/store/actions/common'
@@ -31,6 +32,7 @@ export default class extends Component {
   render() {
     return (
       <Container>
+        <Header title="Data" />
         <Tabs>
           <Tab style={styles.container} heading="This month">
             <Tab1/>

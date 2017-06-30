@@ -22,17 +22,6 @@ export const log = (data, type='table') => ({
   payload: data,
 })
 
-// Little helper function to abstract going to different pages
-export const forwardTo = (route, reset=false) => ({
-  type: 'navigate/' + (reset ? 'reset' : 'push'),
-  payload: route,
-})
-
-export const goBack = () => ({
-  type: 'navigate/pop',
-  payload: null,
-})
-
 // mark request for later checking
 export const markRequestPending = (key) => ({
   type: MARK_REQUEST_PENDING,
@@ -81,8 +70,4 @@ export const closeDrawer = () => ({
   type: 'app/closeDrawer',  
 })
 
-export const search = (payload) => ({
-  type: 'app/search',
-  payload,
-})
 

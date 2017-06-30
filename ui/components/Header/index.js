@@ -12,37 +12,24 @@ import * as commonActions from '~/store/actions/common'
 import Icon from '~/ui/elements/Icon'
 import styles from './styles'
 
-@connect(state=>({
-  searchString: commonSelectors.getSearchString(state),
-}), commonActions)
 export default class extends Component {
 
   constructor(props) {
     super(props)
   
     this.state = {
-      type: props.type,
-      title: props.title,
+      searchString: '',
     }
   }
 
-  componentDidMount(){
-    this.props.onItemRef && this.props.onItemRef(this)
-  }
-
-  show(type, title){
-    this.setState({type, title})
-  } 
-
   handleClear(){
-    this._search('')
+    this.setState({searchString: ''})
     Keyboard.dismiss()
   }
 
-  _search = (value, force=false)=>{
-    if((this.props.searchString !== value) || force) {
-      this.props.search(value)
-    } 
+  handleSearch(searchString){
+    this.setState({searchString})
+    this.props.onSearch && this.props.onSearch(searchString)
   }
 
   renderHeaderTitle(title){
@@ -54,14 +41,15 @@ export default class extends Component {
 
   // public data not event
   renderHeaderSearch(){        
+    const {searchString} = this.state
     const center = (
       <Item style={styles.searchContainer}>
           <Icon name="search" style={styles.searchIcon} />
-          <Input value={this.props.searchString} 
-            autoCorrect={false} onChangeText={this._search} 
+          <Input value={searchString} 
+            autoCorrect={false} onChangeText={this.handleSearch.bind(this)} 
             placeholderTextColor="#7A797B" style={styles.searchInput} 
             placeholder="Search People" />  
-          {!!this.props.searchString.length && 
+          {!!searchString.length && 
           <Icon
             onPress={this.handleClear.bind(this)}
             style={styles.closeIcon}
@@ -81,13 +69,9 @@ export default class extends Component {
     )
   }
 
-  render(){
-    // events will be 
-    const {type, title} = this.state        
-    // event will be invoke via pageInstance
-    switch(type){
-      case 'none':      
-        return false
+  render(){    
+    const {type, title} = this.props        
+    switch(type){      
       case 'search':      
         return this.renderHeaderSearch()
       default:

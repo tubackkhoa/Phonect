@@ -3,6 +3,7 @@ package com.phonect;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
 import io.fullstack.oauth.OAuthManagerPackage;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.oney.WebRTCModule.WebRTCModulePackage;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new VectorIconsPackage(),
             new OAuthManagerPackage(),
             new ReactNativeOneSignalPackage(),
             new WebRTCModulePackage(),

@@ -16,6 +16,7 @@ import {
 
 import Icon from '~/ui/elements/Icon'
 import Content from '~/ui/components/Content'
+import Header from '~/ui/components/Header'
 import Keyboard from '~/ui/components/Keyboard'
 import styles from './styles'
 import { validate } from './utils'
@@ -72,7 +73,7 @@ export default class extends Component {
     return (          
        
         <Container>         
-            
+            <Header title="Call" />
             <Content style={{marginBottom:20}}>   
 
               <View style={styles.inputContainer}>

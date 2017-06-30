@@ -1,51 +1,44 @@
 import Home from './containers/Home'
-import NotFound from './containers/NotFound'
-// import Notification from './containers/Notification'
 import Login from './containers/Login'
 import UserSetting from './containers/User/Setting'
 import People from './containers/People/Index'
 import Data from './containers/Data'
 import Call from './containers/Call'
-// import WebRTC from './containers/WebRTC'
+import Footer from './components/Footer'
 
-// we can use animationType object for each route via Navigator.SceneConfigs
-export default {
-    notFound: {
-        title: 'Not Found',
-        Page: NotFound,
-        headerType: 'none',
-        footerType: 'none',
-    },
-    call: {
-        title: 'Call',
-        Page: Call,
-    },
+import { StackNavigator, TabNavigator } from 'react-navigation'
+
+export const RootStack = (initialRouteName) => StackNavigator({
     home: {
-        title: 'My Status',
-        Page: Home,
-    },
-    data: {
-        title: 'Data',
-        Page: Data,
-    },
-    people: {
-        title: 'People',
-        Page: People,
-        headerType: 'search',
-    },
-    setting: {
-        title: 'Setting',
-        Page: UserSetting,
+        screen: TabNavigator({            
+            home: {        
+                screen: Home,
+            },
+            setting: {        
+                screen: UserSetting,
+            },            
+            people: {        
+                screen: People,        
+            },
+            call: {        
+                screen: Call,
+            },
+            data: {        
+                screen: Data,
+            },
+        }, {
+          initialRouteName: 'home',
+          headerMode: 'none',
+          tabBarComponent: Footer,   
+          tabBarPosition: 'bottom',   
+          animationEnabled: true,
+          swipeEnabled: true,
+        }),
     },
     login: {
-        title: 'Login',
-        Page: Login,
-        headerType: 'none',
-        footerType: 'none',
+        screen: Login,
     },
-    // webrtc:{
-    //     title: 'WebRTC',
-    //     Page: WebRTC,
-    // },
-
-};
+}, {
+    initialRouteName, 
+    headerMode: 'none',
+})

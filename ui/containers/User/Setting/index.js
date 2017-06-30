@@ -5,12 +5,14 @@ import {
 } from 'native-base'
 
 import Content from '~/ui/components/Content'
+import Header from '~/ui/components/Header'
 
 import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
-import { firebaseConnect, pathToJS, isLoaded } from 'react-redux-firebase'
+// import { firebaseConnect, pathToJS, isLoaded } from 'react-redux-firebase'
 
 import * as commonActions from '~/store/actions/common'
+import * as authActions from '~/store/actions/auth'
 
 import { 
   SwitchField,
@@ -19,18 +21,19 @@ import { validate } from './utils'
 import options from './options'
 import styles from './styles'
 
-@firebaseConnect()
+// @firebaseConnect()
 @connect(state=>({  
   initialValues: {
     
   },
-}), commonActions)
+}), {...commonActions, ...authActions})
 @reduxForm({ form: 'SettingForm', validate})
 export default class extends Component {
   _handleLogout(){
-    const {firebase, forwardTo} = this.props
-    firebase.logout()
-    forwardTo('login', true)
+    const {setAuthState, forwardTo} = this.props
+    // firebase.logout()
+    setAuthState(false)
+    // forwardTo('login', true)
   }
 
   renderOption(option, key){
@@ -69,7 +72,8 @@ export default class extends Component {
   render() {
     const {route, forwardTo} = this.props       
     return (                 
-        <Container>                    
+        <Container>      
+            <Header title="Settings" />              
             <Content padder>
                 {options.listItems.map((item, index)=>this.renderOption(item, index))}
 

@@ -7,6 +7,7 @@ import {
 // import { firebaseConnect, dataToJS, isLoaded } from 'react-redux-firebase'
 import { Col, Row, Grid } from 'react-native-easy-grid'
 import Content from '~/ui/components/Content'
+import Header from '~/ui/components/Header'
 import Icon from '~/ui/elements/Icon'
 import { connect } from 'react-redux'
 import * as commonActions from '~/store/actions/common'
@@ -104,6 +105,7 @@ export default class extends Component {
     return (          
        
         <Container>
+            <Header title="Home" />
                     
             <Content padder>             
               {this.renderProfileHeader()}

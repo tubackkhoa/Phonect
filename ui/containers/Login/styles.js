@@ -18,7 +18,8 @@ export default {
     marginTop: 15,    
     backgroundColor: '#0086ac',        
     justifyContent: 'center',
-    width: '100%',   
+    width: material.deviceWidth - 40,
+    alignSelf: 'center',       
     borderRadius: 3,
   }, 
   splash:{
