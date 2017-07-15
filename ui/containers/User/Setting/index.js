@@ -21,19 +21,15 @@ import { validate } from './utils'
 import options from './options'
 import styles from './styles'
 
-// @firebaseConnect()
-@connect(state=>({  
-  initialValues: {
-    
-  },
-}), {...commonActions, ...authActions})
+@connect(null, {...commonActions, ...authActions})
 @reduxForm({ form: 'SettingForm', validate})
 export default class extends Component {
   _handleLogout(){
-    const {setAuthState, forwardTo} = this.props
-    // firebase.logout()
+    const {setAuthState, forwardTo} = this.props    
     setAuthState(false)
-    // forwardTo('login', true)
+    // after logout => reset?    
+    // after logout, reset tab to home !!!
+    this.props.navigation.navigate('home')    
   }
 
   renderOption(option, key){

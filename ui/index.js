@@ -6,7 +6,7 @@ import configureStore from '~/store/config'
 import { forwardTo } from '~/store/actions/common'
 import Preload from './containers/Preload'
 // import OneSignal from 'react-native-onesignal'
-import { RootStack } from './routes'
+// import { RootStack } from './routes'
 // import firebase from 'firebase'
 
 StatusBar.setBarStyle('light-content')
@@ -15,6 +15,7 @@ if (!window.navigator.userAgent) {
   window.navigator.userAgent = 'react-native'
 }
 
+// vitualize only, no update or connect
 export default class extends Component {
 
   constructor(props) {
@@ -81,11 +82,12 @@ export default class extends Component {
     if(!this.store)
       return ( <Preload message="Initializing..."/> )
 
-    const firstRoute = this.store.getState().auth.loggedIn ? 'home' : 'login'
-    console.log(firstRoute)
+    // const firstRoute = this.store.getState().auth.loggedIn ? 'home' : 'login'
+    // console.log(firstRoute)
+
     return (
       <Provider store={this.store}>
-        <App Navigator={RootStack(firstRoute)}/>        
+        <App/>        
       </Provider>
     )
   }

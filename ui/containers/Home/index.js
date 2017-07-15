@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import {                 
     Button, Container, ListItem, TabHeading, Thumbnail,
-    Text, Item, View, Input, Left, Body, Tab, Right,
+    Text, Item, View, Input, Left, Body, Tab, Right, Header, Title,
 } from 'native-base'
 
 // import { firebaseConnect, dataToJS, isLoaded } from 'react-redux-firebase'
 import { Col, Row, Grid } from 'react-native-easy-grid'
 import Content from '~/ui/components/Content'
-import Header from '~/ui/components/Header'
+// import Header from '~/ui/components/Header'
 import Icon from '~/ui/elements/Icon'
 import { connect } from 'react-redux'
 import * as commonActions from '~/store/actions/common'
@@ -32,14 +32,6 @@ export default class extends Component {
     this.state = {
       selected: 'busy',
     }    
-  }
-
-  componentWillMount(){
-    this.componentWillFocus()
-  }
-
-  componentWillFocus(){
-            
   }
 
   // _onRefresh =() => {
@@ -101,11 +93,21 @@ export default class extends Component {
   }
 
   render() {    
+
+    const { openDrawer } = this.props
         
     return (          
        
         <Container>
-            <Header title="Home" />
+            <Header noShadow>  
+              <Left>
+                <Button transparent onPress={openDrawer}>
+                  <Icon name="menu"/>
+                </Button>  
+              </Left>                
+              <Body><Title full>Home</Title></Body>   
+              <Right/>     
+            </Header> 
                     
             <Content padder>             
               {this.renderProfileHeader()}

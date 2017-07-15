@@ -15,7 +15,6 @@
 		00E356F31AD99517003FC87E /* PhonectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PhonectTests.m */; };
 		071A7D9729D843EB946D37BB /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468DFAA33A7F439E826437AB /* Foundation.ttf */; };
 		1002437D2C1B4C6EA9E4D147 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F95742A57944EA7A8DA142A /* Ionicons.ttf */; };
-		10222F23A11D4866BC7DFE18 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2B09BE322C426F9E04CB7F /* libBVLinearGradient.a */; };
 		11C1B5A0E3394A68B538CB29 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0738855D4864180A5FD14DA /* EvilIcons.ttf */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
@@ -37,8 +36,6 @@
 		240B48EC1ECEA95300D4F01D /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 240B48EB1ECEA95300D4F01D /* libc.tbd */; };
 		240B48EE1ECEA95A00D4F01D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 240B48ED1ECEA95A00D4F01D /* libsqlite3.tbd */; };
 		240B48F01ECEA96400D4F01D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 240B48EF1ECEA96400D4F01D /* libstdc++.tbd */; };
-		240B49461ECF021000D4F01D /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240B49451ECF021000D4F01D /* WebRTC.framework */; };
-		240B49471ECF021800D4F01D /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 240B49451ECF021000D4F01D /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		240CB4091EDAE09600B79303 /* libOAuthManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 240CB3911EDAD22200B79303 /* libOAuthManager.a */; };
 		24382C8D1EDFD6B800364847 /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24382C8C1EDFD6A700364847 /* libART.a */; };
 		24382CD71EDFDA3400364847 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24382C691EDFD61000364847 /* libRCTAnimation.a */; };
@@ -65,7 +62,6 @@
 		B16999F7D5704DB4A6750F40 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E82B81EBF6A454D92868670 /* FontAwesome.ttf */; };
 		B37D130BAD864B6D97E962C4 /* phonect.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FDC3463E8A646399D78B282 /* phonect.ttf */; };
 		B70ACF6CBCA944A6920665A9 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61120D2F05B94ED1AE3BE5AC /* Roboto.ttf */; };
-		C735EAA42D4043C19C5843EF /* libRCTWebRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7048259765D94625A4E08220 /* libRCTWebRTC.a */; };
 		D52DECED0849443FB50E18D3 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C10D7B773452427EB159C39A /* libRNImagePicker.a */; };
 		DC3C6CE94EAC446CAFAC2468 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0223B3FE7F744544BBC1079C /* Octicons.ttf */; };
 		E541748F960D4245A4F9D2E9 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 990A0B079BB343AEB67225EA /* MaterialIcons.ttf */; };
@@ -320,7 +316,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				240B49471ECF021800D4F01D /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +333,6 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* PhonectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhonectTests.m; sourceTree = "<group>"; };
 		0223B3FE7F744544BBC1079C /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		0E2B09BE322C426F9E04CB7F /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		0EA05FEDAF694CB88ADECA0B /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		0F95742A57944EA7A8DA142A /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -365,7 +359,6 @@
 		240B48ED1ECEA95A00D4F01D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		240B48EF1ECEA96400D4F01D /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		240B49101ECEFDF700D4F01D /* Phonect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Phonect.entitlements; path = Phonect/Phonect.entitlements; sourceTree = "<group>"; };
-		240B49451ECF021000D4F01D /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
 		24382C871EDFD6A600364847 /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
 		2B97CB47DD99488EB2306242 /* libRNFS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFS.a; sourceTree = "<group>"; };
 		2DEF85572158489B86FA4153 /* RNFS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
@@ -382,7 +375,6 @@
 		61120D2F05B94ED1AE3BE5AC /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		6B3A2FFD3CB040F8A3859526 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		6ED3F2811D7C0FE9165D0E83 /* Pods_Phonect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Phonect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7048259765D94625A4E08220 /* libRCTWebRTC.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTWebRTC.a; sourceTree = "<group>"; };
 		74F82199064843679922EB1A /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7B60A45CC71146C38BCB0B63 /* OAuthManager.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = OAuthManager.xcodeproj; path = "../node_modules/react-native-oauth/ios/OAuthManager.xcodeproj"; sourceTree = "<group>"; };
@@ -446,11 +438,8 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				9F1A2CAF2D4846219258D733 /* libRNSVG.a in Frameworks */,
 				D52DECED0849443FB50E18D3 /* libRNImagePicker.a in Frameworks */,
-				240B49461ECF021000D4F01D /* WebRTC.framework in Frameworks */,
 				95AD3AA8A37543A6AAB15D6A /* libRNFS.a in Frameworks */,
-				C735EAA42D4043C19C5843EF /* libRCTWebRTC.a in Frameworks */,
 				438333E357534C44BF863ABC /* libRCTOneSignal.a in Frameworks */,
-				10222F23A11D4866BC7DFE18 /* libBVLinearGradient.a in Frameworks */,
 				77E7E62C98FC1D713F11DE8C /* Pods_Phonect.framework in Frameworks */,
 				A9E8A58E0D23426E91FA2141 /* libRNVectorIcons.a in Frameworks */,
 			);
@@ -708,7 +697,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				240B49451ECF021000D4F01D /* WebRTC.framework */,
 				13B07FAE1A68108700A75B9A /* Phonect */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* PhonectTests */,
@@ -821,7 +809,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = TXU6BDYHDH;
+						DevelopmentTeam = EUKQS3744F;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1436,7 +1424,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = TXU6BDYHDH;
+				DEVELOPMENT_TEAM = EUKQS3744F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1478,7 +1466,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = TXU6BDYHDH;
+				DEVELOPMENT_TEAM = EUKQS3744F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -61,13 +61,14 @@ export default class extends Component {
         </View>
       )
     }
-      
-    return (
+  
+    return (      
       <Content style={styles.content} >        
         <FlatList data={filteredPeople}
           removeClippedSubviews={false}
           renderItem={({item}) =>
           <ListItem            
+            onPress={()=>this.props.navigation.navigate('detail', item)}
             avatar
             noBorder
             style={styles.listItemContainer}>

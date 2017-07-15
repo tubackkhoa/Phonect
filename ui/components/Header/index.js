@@ -34,7 +34,7 @@ export default class extends Component {
 
   renderHeaderTitle(title){
     const center = (
-      <Title full style={styles.title}>{title}</Title>
+      <Title full>{title}</Title>
     )
     return this.renderHeader(center)    
   }

@@ -9,7 +9,8 @@ export default (variables = variable) => {
     '.full': {
         justifyContent: 'center',
         alignSelf: 'stretch',
-        width: '100%',
+        fontSize: 17,
+        fontWeight: '400',
     },
     fontSize: variables.titleFontSize,
     fontFamily: variables.titleFontfamily,

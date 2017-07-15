@@ -26,10 +26,6 @@ export default {
     paddingRight:0,
     fontSize: 18,
   },
-  title:{
-    fontSize: 17,
-    fontWeight: '400',
-  },
   menuIcon:{
     marginLeft:0,
   },

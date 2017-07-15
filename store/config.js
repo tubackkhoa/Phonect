@@ -37,10 +37,10 @@ const store = createStore(
 // then run the saga
 sagaMiddleware.run(rootSaga)
 
-// Enable persistence, give the callback
+// Enable persistence, give the callback, should not store the redux-form
 const configureStore = callback =>   {  
   // callback(store)
-  persistStore(store, {storage: AsyncStorage}, ()=> callback(store))  
+  persistStore(store, {storage: AsyncStorage, blacklist: ['form']}, ()=> callback(store))  
     // .purge(['search'])
 }
 
