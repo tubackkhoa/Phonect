@@ -9,4 +9,4 @@ const initialNavState = AppNavigator.router.getStateForAction(
 )
 
 export const nav = (state = initialNavState, action) => 
-  AppNavigator.router.getStateForAction(action, state)
+  AppNavigator.router.getStateForAction(action, state) || state
