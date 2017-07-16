@@ -6,6 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "ba": "cd android && ./gradlew assembleRelease",
+    "ia": "adb devices | awk '{if(NR==2) system(\"adb -s \" $1 \" install -r android/app/build/outputs/apk/app-release.apk\") }'",
     "ra": "react-native run-android",
     "ios": "react-native run-ios",
     "bio": "cd ios && fastlane beta"
