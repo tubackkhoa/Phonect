@@ -116,8 +116,8 @@ export default class extends Component {
 
                 <Grid style={styles.statusOptionsContainer}>
                   <Row>
-                    {this.renderStatusOption('Available', 'available', {borderTopLeftRadius:10})}
-                    {this.renderStatusOption('Busy', 'busy', {borderTopRightRadius:10})}
+                    {this.renderStatusOption('Available', 'available')}
+                    {this.renderStatusOption('Busy', 'busy')}
                   </Row>
                   <Row>
                     {this.renderStatusOption('Meeting', 'meeting')}
@@ -128,7 +128,7 @@ export default class extends Component {
                     {this.renderStatusOption('Sick', 'sick')}
                   </Row>
                   <Row>                          
-                    {this.renderStatusOption('Holiday', 'holiday', {borderBottomLeftRadius:10, borderBottomRightRadius:10})}            
+                    {this.renderStatusOption('Holiday', 'holiday')}            
                   </Row>
                 </Grid>
 

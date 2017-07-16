@@ -16,8 +16,7 @@ export default {
     padding: 10,
   },
   statusOptionsContainer:{
-    borderWidth: 0.5,
-    borderRadius: 10,
+    borderWidth: 0.5,    
     marginTop: 10,
     borderColor: material.listBorderColor,
   },
