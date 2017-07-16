@@ -4,9 +4,6 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
-import io.fullstack.oauth.OAuthManagerPackage;
-import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
-import com.oney.WebRTCModule.WebRTCModulePackage;
 import com.rnfs.RNFSPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.horcrux.svg.SvgPackage;
@@ -31,9 +28,6 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new VectorIconsPackage(),
-            new OAuthManagerPackage(),
-            new ReactNativeOneSignalPackage(),
-            new WebRTCModulePackage(),
             new RNFSPackage(),
             new ImagePickerPackage(),
             new SvgPackage()
