@@ -8,24 +8,22 @@ const initialState = AppNavigator.router.getStateForAction(
   firstAction,
 )
 
-export const nav = (state = initialState, action) => {  
+const getNavAction = action => {
   switch (action.type) {
     case 'navigate/reset':
-      // reset can be complex, should navigate only
-      return AppNavigator.router.getStateForAction(
-        NavigationActions.reset(action.payload), state)      
+        return NavigationActions.reset(action.payload)
 
-    case 'navigate/push':
-      return AppNavigator.router.getStateForAction(
-        NavigationActions.navigate(action.payload), state)    
+    case 'navigate/push':      
+        return NavigationActions.navigate(action.payload)
 
-    case 'navigate/pop':
-      return AppNavigator.router.getStateForAction(
-        NavigationActions.back(action.payload), state)  
+    case 'navigate/pop':      
+        return NavigationActions.back(action.payload)
 
     // by default, allow user to use react-navigation directly, it may cause performance a little
     default:      
-      return AppNavigator.router.getStateForAction(action, state) || state      
+      return action    
   }
-  
 }
+
+export const nav = (state = initialState, action) =>   
+  AppNavigator.router.getStateForAction(getNavAction(action), state) || state      
