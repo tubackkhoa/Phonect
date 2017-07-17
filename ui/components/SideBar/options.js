@@ -1,29 +1,24 @@
 export default { 
   listItems: [
     {
-      name: 'Profile',
-      route: 'network',
-      icon: 'network',
+      name: 'Home',
+      route: 'home',
     },    
     {
-      name: 'Activity Log',
-      route: 'activityLog',
-      icon: 'activity',
-    },
-    {
       name: 'Settings',
-      route: 'user/setting',
-      icon: 'setting',
+      route: 'setting',
     },
     {
-      name: 'Rewards',
-      route: 'interaction',
-      icon: 'interaction',
+      name: 'People',
+      route: 'people',
     },
     {
-      name: 'Are you a celeb?',
-      route: 'calendar',
-      icon: 'reminder',
+      name: 'Call',
+      route: 'call',
+    },
+    {
+      name: 'Data',
+      route: 'data',
     },
 
   ]

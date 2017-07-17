@@ -38,11 +38,7 @@ import material from '~/theme/variables/material'
 // @firebaseConnect([
 //   '/people',
 // // ])
-// @connect(state=>({  
-//   // people: options.list,
-//   // people: dataToJS(state.firebase, 'people'), // path of firebase data
-//   // searchString: commonSelectors.getSearchString(state),
-// }), commonActions)
+@connect(null, commonActions)
 export default class extends Component {
 
   constructor(props) {
@@ -68,7 +64,7 @@ export default class extends Component {
           removeClippedSubviews={false}
           renderItem={({item}) =>
           <ListItem            
-            onPress={()=>this.props.navigation.navigate('detail', item)}
+            onPress={()=>this.props.forwardTo({routeName:'detail', params:item})}
             avatar
             noBorder
             style={styles.listItemContainer}>

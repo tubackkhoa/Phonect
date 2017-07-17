@@ -24,10 +24,7 @@ import {
   API_BASE
 } from '~/store/constants/api'
 
-@connect(state=>({
-  // token: authSelectors.getToken(state),
-  // profile: accountSelectors.getProfile(state),
-}), {...authActions, ...commonActions})
+@connect(null, {...authActions, ...commonActions})
 export default class extends Component {  
 
   _handleLogout = (e) => {    
@@ -35,9 +32,9 @@ export default class extends Component {
   }
 
   navigateTo(route) {
-    const {navigation, closeDrawer} = this.props
+    const {forwardTo, closeDrawer} = this.props
     closeDrawer()
-    // navigation.navigate(route)
+    forwardTo(route)
   }
 
   render() {

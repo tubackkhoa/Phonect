@@ -7,6 +7,9 @@ import {
 import Content from '~/ui/components/Content'
 import { validate, renderGroupPermission } from './utils'
 
+import { connect } from 'react-redux'
+import * as commonActions from '~/store/actions/common'
+
 import Icon from '~/ui/elements/Icon'
 import styles from './styles'
 
@@ -15,14 +18,16 @@ import styles from './styles'
 // if tabs in stack, each tabs collection can be a screen in stack route with 
 // random id, so we can not indentify the exact one, must go back, must 
 // follow the navigation rule !!!
+
+@connect(null, commonActions)
 export default class extends Component {
   render() {
-    const { navigation } = this.props           
+    const { navigation, goBack, forwardTo } = this.props           
     return (
       <Container>
           <Header noShadow>  
             <Left>
-              <Button transparent onPress={()=>navigation.goBack()}>
+              <Button transparent onPress={()=>goBack()}>
                 <Icon name="keyboard-arrow-left"/>
               </Button>  
             </Left>                
@@ -33,7 +38,7 @@ export default class extends Component {
           <Content padder>
             <Text>Detail</Text> 
             <Button              
-              onPress={()=> navigation.navigate('home')}
+              onPress={()=> forwardTo('home')}
               style={styles.button}
               block>
               <Text>Go Home</Text>
