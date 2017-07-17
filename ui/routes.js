@@ -36,8 +36,7 @@ export const AppNavigator = TabNavigator({
     data: {        
         screen: Data,
     },
-}, {
-  initialRouteName: 'home',
+}, {  
   headerMode: 'none',
   // with lazy, we can use preload in the tab to show the preloading
   // which will be much faster instead of trigger all componentDidMount
