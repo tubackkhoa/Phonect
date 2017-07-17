@@ -29,7 +29,7 @@ export default class extends Component {
     setAuthState(false)
     // after logout => reset?    
     // after logout, reset tab to home !!!
-    forwardTo('home', true)    
+    forwardTo('home')    
   }
 
   renderOption(option, key){

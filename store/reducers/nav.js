@@ -10,12 +10,10 @@ const initialState = AppNavigator.router.getStateForAction(
 
 export const nav = (state = initialState, action) => {  
   switch (action.type) {
-      case 'navigate/reset':
+    case 'navigate/reset':
+      // reset can be complex, should navigate only
       return AppNavigator.router.getStateForAction(
-        NavigationActions.reset({
-          index: 0,
-          actions: [NavigationActions.navigate(action.payload)]          
-        }), state)      
+        NavigationActions.reset(action.payload), state)      
 
     case 'navigate/push':
       return AppNavigator.router.getStateForAction(
