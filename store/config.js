@@ -1,17 +1,21 @@
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+import Immutable from 'immutable'
 import createSagaMiddleware from 'redux-saga'
-import {AsyncStorage} from 'react-native'
-import { persistStore, autoRehydrate } from 'redux-persist'
+import { AsyncStorage } from 'react-native'
+// import { persistStore, autoRehydrate } from 'redux-persist'
+import createActionBuffer from 'redux-action-buffer'
+import { REHYDRATE } from 'redux-persist/constants'
+import { persistStore, autoRehydrate } from 'redux-persist-immutable'
 
 import rootReducer from './reducers'
 import rootSaga from './sagas'
 
-const initialState = {}
+const initialState = Immutable.Map()
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware()
 
-const middleware = [sagaMiddleware]
+const middleware = [sagaMiddleware, createActionBuffer(REHYDRATE)]
 
 
 // only use logger when there is not devTools

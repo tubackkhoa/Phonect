@@ -12,17 +12,14 @@ import {
 } from 'native-base'
 import styles from './styles'
 import { connect } from 'react-redux'
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form/immutable'
 
 import routes from '~/ui/routes'
-import * as commonActions from '~/store/actions/common'
 import * as authActions from '~/store/actions/auth'
-import * as commonSelectors from '~/store/selectors/common'
 
 import Content from '~/ui/components/Content'
 import Preload from '~/ui/containers/Preload'
 import { InputField } from '~/ui/elements/Form'
-import { validate } from './utils'
 import { spashImage } from '~/assets'
 
 import Icon from '~/ui/elements/Icon'
@@ -32,8 +29,8 @@ import Icon from '~/ui/elements/Icon'
     email: 'contact@qsoftvietnam.com',
     password: 'qs123123',
   },
-}), {...commonActions, ...authActions})
-@reduxForm({ form: 'LoginForm', validate})
+}), authActions)
+@reduxForm({ form: 'LoginForm' })
 export default class extends Component {
   constructor(props) {
     super(props)    

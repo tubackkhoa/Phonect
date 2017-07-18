@@ -6,9 +6,6 @@ import {
     Text, Title, Button, Item, Input,
 } from 'native-base'
 
-import * as commonSelectors from '~/store/selectors/common'
-import * as commonActions from '~/store/actions/common'
-
 import Icon from '~/ui/elements/Icon'
 import styles from './styles'
 

@@ -8,21 +8,18 @@ import Content from '~/ui/components/Content'
 import Header from '~/ui/components/Header'
 
 import { connect } from 'react-redux'
-import { Field, reduxForm } from 'redux-form'
-// import { firebaseConnect, pathToJS, isLoaded } from 'react-redux-firebase'
+import { Field, reduxForm } from 'redux-form/immutable'
 
-import * as commonActions from '~/store/actions/common'
 import * as authActions from '~/store/actions/auth'
 
 import { 
   SwitchField,
 } from '~/ui/elements/Form'
-import { validate } from './utils'
 import options from './options'
 import styles from './styles'
 
-@connect(null, {...commonActions, ...authActions})
-@reduxForm({ form: 'SettingForm', validate})
+@connect(null, authActions)
+@reduxForm({ form: 'SettingForm'})
 export default class extends Component {
   _handleLogout(){
     const {setAuthState, navigation} = this.props    

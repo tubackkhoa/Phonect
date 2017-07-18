@@ -6,12 +6,6 @@ import {
 
 import Content from '~/ui/components/Content'
 import Header from '~/ui/components/Header'
-import { connect } from 'react-redux'
-import * as delegationActions from '~/store/actions/delegation'
-import * as commonActions from '~/store/actions/common'
-import * as authSelectors from '~/store/selectors/auth'
-import * as delegationSelectors from '~/store/selectors/delegation'
-
 import { formatDate } from '~/ui/shared/utils'
 import Tab1 from './components/Tab1'
 import Tab2 from './components/Tab2'
@@ -25,9 +19,7 @@ import styles from './styles'
 import { API_BASE } from '~/store/constants/api'
 import { avatarImage } from '~/assets'
 
-@connect(state=>({
-  
-}), commonActions)
+
 export default class extends Component {
   render() {
     return (

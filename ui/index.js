@@ -3,7 +3,6 @@ import { StatusBar } from 'react-native'
 import App from './app'
 import { Provider } from 'react-redux'
 import configureStore from '~/store/config'
-import { forwardTo } from '~/store/actions/common'
 import Preload from './containers/Preload'
 
 StatusBar.setBarStyle('light-content')

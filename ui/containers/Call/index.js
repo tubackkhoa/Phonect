@@ -8,7 +8,6 @@ import {
 import { connect } from 'react-redux'
 
 import { Field, reduxForm } from 'redux-form'
-import commonActions from '~/store/actions/common'
 
 import { 
   InputField,
@@ -19,13 +18,12 @@ import Content from '~/ui/components/Content'
 import Header from '~/ui/components/Header'
 import Keyboard from '~/ui/components/Keyboard'
 import styles from './styles'
-import { validate } from './utils'
 
 @connect(state=>({  
   initialValues: {    
   },
-}), commonActions)
-@reduxForm({ form: 'CallForm', validate})
+}))
+@reduxForm({form: 'CallForm'})
 export default class extends Component {  
 
   constructor(props) {

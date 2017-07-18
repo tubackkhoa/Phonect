@@ -8,10 +8,6 @@ import { Content,Text, List, ListItem,
 
 // import CacheableImage from '~/ui/components/CacheableImage'
 import * as authActions from '~/store/actions/auth'
-import * as accountSelectors from '~/store/selectors/account'
-import * as commonActions from '~/store/actions/common'
-import * as authSelectors from '~/store/selectors/auth'
-
 
 import options from './options'
 import routes from '~/ui/routes'
@@ -24,7 +20,7 @@ import {
   API_BASE
 } from '~/store/constants/api'
 
-@connect(null, {...authActions, ...commonActions})
+@connect(null, authActions)
 export default class extends Component {  
 
   _handleLogout = (e) => {    
