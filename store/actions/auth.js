@@ -30,11 +30,6 @@ export const saveLoggedUser = ({userName,...token}) => ({
   }
 })
 
-export const saveFirebaseUser = (payload) => ({
-  type: 'app/saveLoggedUser',
-  payload,
-})
-
 // data: {accessToken...}
 export const saveRefreshToken = (data) => ({
   type: 'app/saveRefreshToken',
