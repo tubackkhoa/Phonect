@@ -25,15 +25,15 @@ import styles from './styles'
 @reduxForm({ form: 'SettingForm', validate})
 export default class extends Component {
   _handleLogout(){
-    const {setAuthState, forwardTo} = this.props    
+    const {setAuthState, navigation} = this.props    
     setAuthState(false)
     // after logout => reset?    
     // after logout, reset tab to home !!!
-    forwardTo('home')    
+    navigation.navigate('home')    
   }
 
   renderOption(option, key){
-    const {forwardTo} = this.props
+    const {navigation} = this.props
     return (
       <View
         style={styles.container}
@@ -66,7 +66,7 @@ export default class extends Component {
   }
 
   render() {
-    const {route, forwardTo} = this.props       
+    const {route, navigation} = this.props       
     return (                 
         <Container>      
             <Header title="Settings" />              

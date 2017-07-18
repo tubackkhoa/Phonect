@@ -28,17 +28,14 @@ import {
 export default class extends Component {  
 
   _handleLogout = (e) => {    
-    // this.props.logout(this.props.token)       
-  }
-
-  navigateTo(route) {
-    const {forwardTo, closeDrawer} = this.props
-    closeDrawer()
-    forwardTo(route)
+    // this.props.logout(this.props.token) 
+    const {setAuthState} = this.props    
+    setAuthState(false)      
   }
 
   render() {
     
+    const {items, navigation} = this.props    
     return (      
       
         <Content
@@ -51,10 +48,11 @@ export default class extends Component {
               style={styles.drawerImage}/>    
           </View>
           <View style={styles.listItemContainer}>
-            {options.listItems.map((item, index) =>
-                <ListItem noBorder key={index} button onPress={e => this.navigateTo(item.route)} >
+            {items.map((item, index) =>
+                <ListItem noBorder key={item.key} button onPress={e => navigation.navigate(item.routeName)} >
                   <Left>                    
-                    <Text style={styles.iconText}>{item.name}</Text>
+                    <Icon name={options.listItems[index].icon} style={styles.icon} />
+                    <Text style={styles.iconText}>{options.listItems[index].name}</Text>
                   </Left>                
                 </ListItem>)}
             

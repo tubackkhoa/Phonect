@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NativeModules } from 'react-native'
+import { NativeModules, View } from 'react-native'
 import { StyleProvider } from 'native-base'
 
 import getTheme from '~/theme/components'
@@ -32,13 +32,11 @@ export default class App extends Component {
   render() {        
     const {isLogged} = this.props   
     return (            
-      <StyleProvider style={getTheme(material)}>    
-        {!isLogged ? <Login/> :        
-        <Drawer>                              
-          <Navigator/>
-          <Toasts/>  
-        </Drawer> 
-      }
+      <StyleProvider style={getTheme(material)}>  
+        <View style={{flex:1}}>  
+          {isLogged ? <Navigator/> : <Login/>}                                                
+          <Toasts/>              
+        </View>  
       </StyleProvider>          
     )
   }

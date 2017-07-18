@@ -7,19 +7,6 @@ import {
 
 import Content from '~/ui/components/Content'
 import Header from '~/ui/components/Header'
-import { connect } from 'react-redux'
-
-// import {
-//   firebaseConnect,
-//   isLoaded,
-//   isEmpty,
-//   dataToJS,
-//   firebase,
-// } from 'react-redux-firebase'
-
-import * as commonActions from '~/store/actions/common'
-import * as commonSelectors from '~/store/selectors/common'
-import * as authSelectors from '~/store/selectors/auth'
 
 import { formatDate } from '~/ui/shared/utils'
 
@@ -35,10 +22,6 @@ import { API_BASE } from '~/store/constants/api'
 import { avatarImage } from '~/assets'
 import material from '~/theme/variables/material'
 
-// @firebaseConnect([
-//   '/people',
-// // ])
-@connect(null, commonActions)
 export default class extends Component {
 
   constructor(props) {
@@ -57,14 +40,15 @@ export default class extends Component {
         </View>
       )
     }
-  
+    
     return (      
+
       <Content style={styles.content} >        
         <FlatList data={filteredPeople}
           removeClippedSubviews={false}
           renderItem={({item}) =>
           <ListItem            
-            onPress={()=>this.props.forwardTo({routeName:'detail', params:item})}
+            onPress={()=>this.props.navigation.navigate('detail', item)}
             avatar
             noBorder
             style={styles.listItemContainer}>
@@ -115,7 +99,7 @@ export default class extends Component {
   }
 
   render() {
-    const {searchString} = this.state
+    const {searchString} = this.state    
     return (
       <Container>
       <Header title="People" type="search" onSearch={searchString=>this.setState({searchString})} />

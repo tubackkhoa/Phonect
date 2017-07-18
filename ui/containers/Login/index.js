@@ -43,7 +43,7 @@ export default class extends Component {
   }
 
   _handleLogin = async ({email, password}) => {   
-    // this.props.forwardTo('home') 
+    // this.props.navigation.navigate('home') 
     // pretending the data retrieve
     // set authstate to trigger switch page
     this.setState({ loading: true })
@@ -52,7 +52,7 @@ export default class extends Component {
   }
 
   render() {    
-    const { handleSubmit, submitting, forwardTo } = this.props          
+    const { handleSubmit, submitting, navigation } = this.props          
     if(this.state.loading){
       return (
         <Preload/>

@@ -1,26 +1,26 @@
 export default { 
   listItems: [
     {
-      name: 'Home',
-      route: 'home',
-    },    
+      name: 'My Status',
+      icon: 'profile',      
+    },  
     {
-      name: 'Settings',
-      route: 'setting',
-    },
+      name: 'Setting',
+      icon: 'setting',      
+    },   
     {
       name: 'People',
-      route: 'people',
+      icon: 'people',
     },
     {
       name: 'Call',
-      route: 'call',
-    },
+      icon: 'call',
+    }, 
     {
       name: 'Data',
-      route: 'data',
-    },
-
+      icon: 'data',
+    }, 
   ]
 
 }
+

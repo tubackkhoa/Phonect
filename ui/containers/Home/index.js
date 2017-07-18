@@ -9,21 +9,18 @@ import { Col, Row, Grid } from 'react-native-easy-grid'
 import Content from '~/ui/components/Content'
 // import Header from '~/ui/components/Header'
 import Icon from '~/ui/elements/Icon'
-import { connect } from 'react-redux'
-import * as commonActions from '~/store/actions/common'
-import * as authSelectors from '~/store/selectors/auth'
-import * as commonSelectors from '~/store/selectors/common'
-import * as campaignSelectors from '~/store/selectors/campaign'
-import * as campaignActions from '~/store/actions/campaign'
-import material from '~/theme/variables/material'
+// import { connect } from 'react-redux'
+// import * as commonActions from '~/store/actions/common'
+// import * as authSelectors from '~/store/selectors/auth'
+// import * as commonSelectors from '~/store/selectors/common'
+// import * as campaignSelectors from '~/store/selectors/campaign'
+// import * as campaignActions from '~/store/actions/campaign'
+// import material from '~/theme/variables/material'
 import { avatarImage } from '~/assets'
 
 import options from './options'
 import styles from './styles'
 
-@connect(state=>({  
-
-}), commonActions)
 export default class extends Component {
 
   constructor(props) {
@@ -94,14 +91,14 @@ export default class extends Component {
 
   render() {    
 
-    const { openDrawer } = this.props
+    const { navigation } = this.props
         
     return (          
        
         <Container>
             <Header noShadow>  
               <Left>
-                <Button transparent onPress={openDrawer}>
+                <Button transparent onPress={()=>navigation.navigate('DrawerOpen')}>
                   <Icon name="menu"/>
                 </Button>  
               </Left>                

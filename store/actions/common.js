@@ -62,22 +62,3 @@ export const clearToast = () => ({
   type: 'app/clearToast',
 })
 
-export const openDrawer = () => ({
-  type: 'app/openDrawer',  
-})
-
-export const closeDrawer = () => ({
-  type: 'app/closeDrawer',  
-})
-
-// Little helper function to abstract going to different pages
-export const forwardTo = (route, reset=false) => ({
-  type: 'navigate/' + (reset ? 'reset' : 'push'),
-  payload: typeof route === 'string' ? {routeName: route} : route,
-})
-
-export const goBack = () => ({
-  type: 'navigate/pop',
-  payload: null,
-})
-
